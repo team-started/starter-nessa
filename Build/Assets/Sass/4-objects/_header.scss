@@ -1,0 +1,39 @@
+#header {
+    z-index: $zindex-header;
+    padding: 20px 0;
+    background: $white;
+    transition: all .5s;
+
+    &.header-scrolled {
+        padding: 12px 0;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, .1);
+    }
+}
+
+.o-site-header {
+    &__wrapper {
+        display: flex;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        width: $logo-wrapper-default-width;
+
+        @include media-breakpoint-up(sm) {
+            width: $logo-wrapper-sm-width;
+        }
+
+        @include media-breakpoint-up(md) {
+            width: $logo-wrapper-md-width;
+        }
+
+        margin-right: auto;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+}

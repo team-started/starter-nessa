@@ -1,0 +1,3 @@
+@mixin nessa-background-opacity ($color: #fff, $opacity: .8) {
+    background-color: rgba($color, $opacity);
+}

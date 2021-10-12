@@ -1,0 +1,8 @@
+<f:variable name="statusClass"></f:variable>
+<f:if condition="{status}">
+	<f:variable name="statusClass">o-site-footer__link_active</f:variable>
+</f:if>
+
+<a class="o-site-footer__link {statusClass}" href="{item.link}" target="{item.target}">
+	<f:format.raw>{item.title}</f:format.raw>
+</a>

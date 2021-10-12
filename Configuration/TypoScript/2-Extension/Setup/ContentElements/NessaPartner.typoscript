@@ -1,0 +1,19 @@
+tt_content.nessa_partner =< lib.contentElement
+tt_content.nessa_partner {
+  templateName = NessaPartner
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      references.fieldName = assets
+      as = partners
+    }
+  }
+
+  settings {
+    media {
+      width = 200
+      height = 120
+    }
+  }
+}

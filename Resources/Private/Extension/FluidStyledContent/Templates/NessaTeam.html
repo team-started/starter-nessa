@@ -1,0 +1,24 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+
+	<div class="row content">
+		<div class="col">
+			<f:if condition="{data.bodytext}">
+				<f:format.html>{data.bodytext}</f:format.html>
+			</f:if>
+		</div>
+	</div>
+
+	<div class="row">
+		<f:for each="{teamMembers}" as="teamMember">
+			<f:render partial="Team/Item" arguments="{data: teamMember.data, file: teamMember.files.0}" />
+		</f:for>
+	</div>
+
+</f:section>
+
+</html>

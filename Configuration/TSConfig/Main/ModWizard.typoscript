@@ -1,0 +1,116 @@
+mod.wizards.newContentElement.wizardItems {
+  common {
+    elements {
+      nessa_cta {
+        iconIdentifier = starter-ctype-nessa_cta
+        title = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_cta
+        description = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_cta.description
+        tt_content_defValues {
+          CType = nessa_cta
+        }
+      }
+
+      nessa_teaser {
+        iconIdentifier = starter-ctype-nessa_teaser
+        title = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_teaser
+        description = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_teaser.description
+        tt_content_defValues {
+          CType = nessa_teaser
+        }
+      }
+
+      nessa_teaser_icon {
+        iconIdentifier = starter-ctype-nessa_teaser_icon
+        title = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_teaser_icon
+        description = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_teaser_icon.description
+        tt_content_defValues {
+          CType = nessa_teaser_icon
+        }
+      }
+
+      nessa_teaser_background {
+        iconIdentifier = starter-ctype-nessa_teaser_background
+        title = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_teaser_background
+        description = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_teaser_background.description
+        tt_content_defValues {
+          CType = nessa_teaser_background
+        }
+      }
+
+      nessa_download_list {
+        iconIdentifier = starter-ctype-nessa_download_list
+        title = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_download_list
+        description = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_download_list.description
+        tt_content_defValues {
+          CType = nessa_download_list
+        }
+      }
+    }
+
+    show := addToList(text)
+    show := addToList(textmedia)
+    show := addToList(nessa_cta)
+    show := addToList(nessa_teaser)
+    show := addToList(nessa_teaser_icon)
+    show := addToList(nessa_teaser_background)
+    show := addToList(nessa_download_list)
+  }
+
+  special {
+    elements {
+      nessa_hero {
+        iconIdentifier = starter-ctype-nessa_hero
+        title = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_hero
+        description = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_hero.description
+        tt_content_defValues {
+          CType = nessa_hero
+        }
+      }
+
+      nessa_portfolio {
+        iconIdentifier = starter-ctype-nessa_portfolio
+        title = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_portfolio
+        description = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_portfolio.description
+        tt_content_defValues {
+          CType = nessa_portfolio
+        }
+      }
+
+      nessa_team {
+        iconIdentifier = starter-ctype-nessa_team
+        title = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_team
+        description = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_team.description
+        tt_content_defValues {
+          CType = nessa_team
+        }
+      }
+
+      nessa_partner {
+        iconIdentifier = starter-ctype-nessa_partner
+        title = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_partner
+        description = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_partner.description
+        tt_content_defValues {
+          CType = nessa_partner
+        }
+      }
+
+      nessa_footer {
+        iconIdentifier = starter-ctype-nessa_footer
+        title = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_footer
+        description = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.nessa_footer.description
+        tt_content_defValues {
+          CType = nessa_footer
+        }
+      }
+    }
+
+    show := addToList(nessa_team)
+    show := addToList(nessa_partner)
+    show := addToList(nessa_hero)
+    show := addToList(nessa_portfolio)
+    show := addToList(nessa_footer)
+    show := addToList(shortcut)
+    show := addToList(html)
+    show := addToList(div)
+  }
+}

@@ -1,0 +1,24 @@
+page {
+  headerData {
+    20 =< lib.starterTouchIcon
+
+    # remove use of GoogleAnalytics
+    50 >
+    50 < lib.googleTagManagerHead
+  }
+
+  includeJSFooter {
+    file_1 = EXT:starter_nessa/Resources/Public/JavaScript/app.min.js
+  }
+
+  includeCSS {
+    file_1 = EXT:starter_nessa/Resources/Public/Css/app.min.css
+  }
+
+  5 < lib.googleTagManagerBody
+
+  10.dataProcessing {
+    20 < lib.menuLibrary.menuMain
+    30 < lib.menuLibrary.menuBreadcrumb
+  }
+}

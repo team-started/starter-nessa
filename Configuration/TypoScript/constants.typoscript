@@ -1,0 +1,12 @@
+starter {
+  branch {
+    title = Starter Nessa Theme
+    images {
+      logo = EXT:starter_nessa/Resources/Public/Images/Logo.svg
+      favicon = EXT:starter_nessa/Resources/Public/Images/favicon.svg
+      touch-icon = EXT:starter_nessa/Resources/Public/Images/touch-icon.svg
+    }
+  }
+}
+
+@import 'EXT:starter_nessa/Configuration/TypoScript/1-System/Constants/'

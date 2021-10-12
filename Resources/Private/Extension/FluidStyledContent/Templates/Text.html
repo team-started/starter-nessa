@@ -1,0 +1,20 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+
+	<div class="row content">
+		<div class="col">
+			<f:if condition="{data.bodytext}">
+				<f:format.html>{data.bodytext}</f:format.html>
+			</f:if>
+
+			<f:render partial="Cta/Button" arguments="{ctaLink: data.nessa_ctalink, ctaButtonText: data.nessa_ctalink_text}"/>
+		</div>
+	</div>
+
+</f:section>
+
+</html>

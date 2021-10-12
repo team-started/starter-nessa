@@ -1,0 +1,33 @@
+tt_content.nessa_team =< lib.contentElement
+tt_content.nessa_team {
+  templateName = NessaTeam
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    10 {
+      table = tx_starternessa_team_element
+      where {
+        data = field:uid
+        wrap = tt_content_record=|
+      }
+
+      orderBy = sorting
+      as = teamMembers
+
+      dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+          references.fieldName = assets
+        }
+      }
+    }
+  }
+
+  settings {
+    media {
+      width = 310c
+      height = 310c
+      cropVariant = default
+    }
+  }
+}

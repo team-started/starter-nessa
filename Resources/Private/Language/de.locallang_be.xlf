@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2020-11-12T09:46:40Z"
+		  product-name="starter_nessa">
+		<header/>
+		<body>
+
+			<trans-unit id="backend_layout.default_layout.title">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="backend_layout.hero_layout.title">
+				<source>Hero</source>
+				<target>Hero</target>
+			</trans-unit>
+
+			<trans-unit id="backend_layout.row.hero">
+				<source>Hero</source>
+				<target>Hero</target>
+			</trans-unit>
+			<trans-unit id="backend_layout.row.content">
+				<source>Page content</source>
+				<target>Seiteninhalt</target>
+			</trans-unit>
+			<trans-unit id="backend_layout.row.footer">
+				<source>Page Footer</source>
+				<target>Seitenabschluss</target>
+			</trans-unit>
+
+			<trans-unit id="CType.I.nessa_cta">
+				<source>Call-to-Action</source>
+				<target>Interaktion (CTA)</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_cta.description">
+				<source>A call-to-action element to get the website visitor to take action</source>
+				<target>Ein Call-to-action Element um den Websitebesucher zu einer Handlung zu bewegen</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_team">
+				<source>Team</source>
+				<target>Team</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_team.description">
+				<source>An element to introduce your employees with contact details</source>
+				<target>Ein Element um seine Mitarbeiter mit Kontaktdaten vorzustellen</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_teaser">
+				<source>Teaser</source>
+				<target>Teaser</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_teaser.description">
+				<source>A teaser with a short text and predefined icons</source>
+				<target>Ein Teaser (Anreißer) mit einem kurzen Text und vordefinierten Icons</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_teaser_icon">
+				<source>Teaser own icon</source>
+				<target>Teaser eigene Icons</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_teaser_icon.description">
+				<source>A teaser with a short text and icons of your choice</source>
+				<target>Ein Teaser (Anreißer) mit einem kurzen Text und selbst wählbaren Icons</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_teaser_background">
+				<source>Teaser with background</source>
+				<target>Teaser mit Hintergrundbild</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_teaser_background.description">
+				<source>A teaser with a short text and a background image</source>
+				<target>Ein Teaser (Anreißer) mit einem kurzen Text und einem Hintergrundbild</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_hero">
+				<source>Hero</source>
+				<target>Hero</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_hero.description">
+				<source>Full-surface image(s) with headline, text and call-to-action</source>
+				<target>Vollflächiges Bild(er) mit Überschrift, Text und Call-to-Action</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_footer">
+				<source>Footer</source>
+				<target>Seitenabschluss</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_footer.description">
+				<source>Simple element with information for the website footer</source>
+				<target>Einfaches Element mit Informationen für den Website-Footer</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_download_list">
+				<source>Download list</source>
+				<target>Download Liste</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_download_list.description">
+				<source>Element to offer different downloads</source>
+				<target>Element um verschiedene Downloads anzubieten</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_portfolio">
+				<source>Portfolio</source>
+				<target>Portfolio</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_portfolio.description">
+				<source>Element for categorizing images for a portfolio</source>
+				<target>Element zur Kategorisierung von Bildern für ein Portfolio</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_partner">
+				<source>Partner</source>
+				<target>Partner</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_partner.description">
+				<source>Element for the output of company logos</source>
+				<target>Element zur Ausgabe von Unternehmelogos</target>
+			</trans-unit>
+
+			<trans-unit id="sys_file_metadata.nessa_portfolio_link">
+				<source>Portfolio Link</source>
+				<target>Portfolio Link</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.label.backgroundcolor.transparent">
+				<target>transparent (nur Einrückung)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.nessa_ctalink_formlabel">
+				<source>Link</source>
+				<target>Link</target>
+			</trans-unit>
+			<trans-unit id="tt_content.nessa_ctalink_text_formlabel">
+				<source>Link text</source>
+				<target>Linktext</target>
+			</trans-unit>
+			<trans-unit id="tt_content.layout.tx_starternessa_teaser_background.I.medium-2-cols">
+				<source>2 Teaser per row</source>
+				<target>2 Teaser pro Zeile</target>
+			</trans-unit>
+			<trans-unit id="tt_content.layout.tx_starternessa_teaser_background.I.medium-3-cols">
+				<source>3 Teaser per row</source>
+				<target>3 Teaser pro Zeile</target>
+			</trans-unit>
+			<trans-unit id="tt_content.nessa_partner.partner">
+				<source>Company logo</source>
+				<target>Unternehmenslogo</target>
+			</trans-unit>
+
+			<trans-unit id="sys_file_reference.title">
+				<source>Header</source>
+				<target>Überschrift</target>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.description">
+				<source>Copytext</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+
+			<trans-unit id="palette.cta">
+				<source>Call-to-Action</source>
+				<target>Interaktionslinks (CTA)</target>
+			</trans-unit>
+
+			<trans-unit id="team_element_label">
+				<source>Team member</source>
+				<target>Teammitglied</target>
+			</trans-unit>
+			<trans-unit id="team_element_formlabel">
+				<source>Team member</source>
+				<target>Teammitglied</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_team_element.company_position">
+				<source>Position in the company</source>
+				<target>Funktion im Unternehmen</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_team_element.email">
+				<source>Email address</source>
+				<target>E-Mail Adresse</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_team_element.bodytext">
+				<source>Statement</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+
+			<trans-unit id="teaser_element_label">
+				<source>Teaser item</source>
+				<target>Teaser Element</target>
+			</trans-unit>
+			<trans-unit id="teaser_element_formlabel">
+				<source>Teaser item</source>
+				<target>Teaser Element</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_teaser_element.link">
+				<source>Link</source>
+				<target>Link</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_teaser_element.link_text">
+				<source>Link text</source>
+				<target>Linktext</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_teaser_element.icon">
+				<source>Icon</source>
+				<target>Icon</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_teaser_element.icon.I.drink-water">
+				<source>Drink water</source>
+				<target>Trinkwasser</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_teaser_element.icon.I.agricultural-water">
+				<source>Agricultural water</source>
+				<target>Landwirtschaftswasser</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_teaser_element.icon.I.consumption-water">
+				<source>Consumption water</source>
+				<target>Verbrauchswasser</target>
+			</trans-unit>
+
+			<trans-unit id="hero_element_label">
+				<source>Hero item</source>
+				<target>Hero Element</target>
+			</trans-unit>
+			<trans-unit id="hero_element_formlabel">
+				<source>Hero item</source>
+				<target>Hero Element</target>
+			</trans-unit>
+
+			<trans-unit id="tab.team_members">
+				<source>Team</source>
+				<target>Team</target>
+			</trans-unit>
+
+			<trans-unit id="social_element_formlabel">
+				<source>SocialMedia Items</source>
+				<target>SocialMedia Elemente</target>
+			</trans-unit>
+			<trans-unit id="social_element_label">
+				<source>SocialMedia Items</source>
+				<target>SocialMedia Elemente</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_social_element.social_link">
+				<source>SocialMedia Link</source>
+				<target>SocialMedia Link</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_social_element.icon">
+				<source>SocialMedia Icon</source>
+				<source>SocialMedia Icon</source>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_social_element.icon.I.facebook">
+				<source>Facebook</source>
+				<target>Facebook</target>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_social_element.icon.I.instragram">
+				<source>Instagram</source>
+				<target>Instagram</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.nessa_copyright_formlabel">
+				<source>Copyright</source>
+				<target>Copyright</target>
+			</trans-unit>
+
+			</body>
+    </file>
+</xliff>

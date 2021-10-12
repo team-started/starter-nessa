@@ -1,0 +1,24 @@
+tt_content.nessa_footer =< lib.contentElement
+tt_content.nessa_footer {
+  templateName = NessaFooter
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    10 {
+      table = tx_starternessa_social_element
+      pidInList = {$starter.pid.defaultHomePageUid}
+      orderBy = sorting
+      as = socialMediaItems
+    }
+
+    20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    20 {
+      special = list
+      special.value.field = pages
+      as = pages
+      titleField = nav_title // title
+      expandAll = 1
+      levels = 7
+    }
+  }
+}

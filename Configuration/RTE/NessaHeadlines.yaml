@@ -1,0 +1,12 @@
+imports:
+  - { resource: "EXT:starter_nessa/Configuration/RTE/Nessa.yaml" }
+
+editor:
+  config:
+    format_tags: "p;h2;h3"
+
+    toolbarGroups:
+      - { name: styles, groups: [ format ] }
+
+    removeButtons:
+      - Styles

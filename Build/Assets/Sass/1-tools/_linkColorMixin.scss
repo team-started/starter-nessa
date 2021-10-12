@@ -1,0 +1,37 @@
+//*****************************************
+//
+//  Set link color and states.
+//  If states are unset, defaults are choosen.
+//  @include nessa-link-color( $color: #123456, $hover: red)
+//
+//*****************************************
+
+@mixin nessa-link-color( $color: blue, $hover: false, $focus: false ) {
+    color: $color;
+
+    &:hover {
+        @if $hover != false {
+            color: $hover;
+        } @else {
+            color: $color;
+        }
+    }
+
+    &:focus {
+        @if $focus != false {
+            color: $focus;
+        } @else {
+            @if $hover != false {
+                color: $hover;
+            } @else {
+                color: $color;
+            }
+        }
+    }
+
+    @if $focus != false {
+        &_active {
+            color: $focus;
+        }
+    }
+}

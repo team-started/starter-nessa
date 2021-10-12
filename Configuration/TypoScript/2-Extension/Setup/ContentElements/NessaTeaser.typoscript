@@ -1,0 +1,18 @@
+tt_content.nessa_teaser =< lib.contentElement
+tt_content.nessa_teaser {
+  templateName = NessaTeaser
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    10 {
+      table = tx_starternessa_teaser_element
+      where {
+        data = field:uid
+        wrap = tt_content_record=|
+      }
+
+      orderBy = sorting
+      as = teasers
+    }
+  }
+}

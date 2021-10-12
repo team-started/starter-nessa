@@ -1,0 +1,41 @@
+$customFont-OpenSans: (
+    'normal': ('regular', '300', '600', '700'),
+    'italic': ('italic', '300italic', '600italic', '700italic')
+);
+
+$customFont-Poppins: (
+    'normal': ('regular', '300', '500', '600', '700'),
+    'italic': ('italic', '300italic', '500italic', '600italic', '700italic')
+);
+
+@each $fontWeight, $fontValues in $customFont-OpenSans {
+    @each $fontValue in $fontValues {
+        @include nessa-font-face(
+            $family: '"Open Sans"',
+            $src: '../../Fonts/open-sans-v17-latin/open-sans-v17-latin-#{$fontValue}',
+            $weight: $fontValue,
+            $style: $fontWeight,
+            $woff2: true
+        );
+    }
+}
+
+@each $fontWeight, $fontValues in $customFont-Poppins {
+    @each $fontValue in $fontValues {
+        @include nessa-font-face(
+            $family: 'Poppins',
+            $src: '../../Fonts/poppins-v12-latin/poppins-v12-latin-#{$fontValue}',
+            $weight: $fontValue,
+            $style: $fontWeight,
+            $woff2: true
+        );
+    }
+}
+
+@include nessa-font-face(
+    $family: 'IcoFont',
+    $src: '../../Fonts/icoFont/icofont',
+    $weight: normal,
+    $style: 'Regular',
+    $woff2: true
+);

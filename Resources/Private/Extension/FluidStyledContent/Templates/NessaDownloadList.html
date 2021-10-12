@@ -1,0 +1,38 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+
+	<div class="row">
+
+		<f:for each="{downloadFiles}" as="downloadFile">
+
+			<div class="col-md-6 d-flex align-items-stretch c-download-list__item">
+				<a href="{downloadFile.publicUrl}" download class="c-download-list__link">
+					<div class="media">
+						<div class="c-download-list__media">
+							<i class="icofont-download mr-3"></i>
+						</div>
+
+						<div class="media-body">
+							<h3 class="c-download-list__headline mt-0">{downloadFile.title}</h3>
+							<p class="c-download-list__description">
+								{downloadFile.description}
+								<span class="c-download-list__meta">
+									<span class="c-download-list__type">{downloadFile.originalFile.extension -> starterteam:format.upper()}</span>
+									(<span class="c-download-list__size">{downloadFile.originalFile.size -> f:format.bytes()}</span>)
+								</span>
+							</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</f:for>
+
+	</div>
+
+</f:section>
+
+</html>

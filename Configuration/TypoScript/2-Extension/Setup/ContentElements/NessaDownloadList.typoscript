@@ -1,0 +1,12 @@
+tt_content.nessa_download_list =< lib.contentElement
+tt_content.nessa_download_list {
+  templateName = NessaDownloadList
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      references.fieldName = media
+      as = downloadFiles
+    }
+  }
+}

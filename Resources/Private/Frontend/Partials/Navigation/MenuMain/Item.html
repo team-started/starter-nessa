@@ -1,0 +1,18 @@
+<f:if condition="{item.current} || {item.active}">
+		<f:then>
+				<li class="{f:if(condition:item.children, then:'drop-down')}">
+						<f:render partial="Navigation/MenuMain/Link" arguments="{item:item, status: 'c-menumain-nav__link_active'}"/>
+						<f:if condition="{item.children}">
+								<f:render partial="Navigation/MenuMain/SubMenu" arguments="{children: item.children}"/>
+						</f:if>
+				</li>
+		</f:then>
+		<f:else>
+				<li class="{f:if(condition:item.children, then:'drop-down')}">
+						<f:render partial="Navigation/MenuMain/Link" arguments="{item:item}"/>
+						<f:if condition="{item.children}">
+								<f:render partial="Navigation/MenuMain/SubMenu" arguments="{children: item.children}"/>
+						</f:if>
+				</li>
+		</f:else>
+</f:if>

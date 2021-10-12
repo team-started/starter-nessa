@@ -1,0 +1,21 @@
+
+tt_content.nessa_portfolio =< lib.contentElement
+tt_content.nessa_portfolio {
+  templateName = NessaPortfolio
+
+  dataProcessing {
+    5 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    5 {
+      table = sys_category
+      pidInList = 1
+      recursive = 2
+      as = portfolioCategories
+    }
+
+    10 = StarterTeam\StarterNessa\DataProcessing\AssetsOfCategoriesProcessor
+    10 {
+      orderBy = name
+      as = portfolioAssets
+    }
+  }
+}

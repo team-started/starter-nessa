@@ -1,0 +1,20 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<header id="header" class="fixed-top o-site-header">
+	<div class="container o-site-header__wrapper">
+		<f:link.page
+			pageUid="{settings.defaultHomePageUid}"
+			class="o-site-header__logo"
+		>
+			<img src="{f:uri.image(src: settings.logoFile)}" alt=""/>
+		</f:link.page>
+
+		<div class="o-site-header__menu">
+			<f:render partial="Navigation/MenuMain" arguments="{menuMain: menuMain}"/>
+		</div>
+
+	</div>
+</header>
+
+</html>

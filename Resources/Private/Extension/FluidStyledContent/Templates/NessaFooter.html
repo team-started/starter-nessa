@@ -1,0 +1,54 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<div class="container">
+	<div class="row d-flex align-items-center">
+		<div class="col-lg-4 text-lg-left text-center">
+			<div class="o-site-footer__copyright">
+				&copy; <strong>{data.nessa_copyright}</strong>
+			</div>
+		</div>
+
+		<f:if condition="{socialMediaItems}">
+			<div class="col-lg-4">
+				<ul class="o-site-footer__socialmedia_list text-center">
+					<f:for each="{socialMediaItems}" as="socialMediaItem">
+						<li>
+							<f:link.typolink
+								parameter="{socialMediaItem.data.social_link}"
+								target="_blank"
+								title="{socialMediaItem.data.header}"
+								class="o-site-footer__socialmedia_list_link"
+							>
+								<i class="{socialMediaItem.data.icon}"></i>
+							</f:link.typolink>
+						</li>
+					</f:for>
+				</ul>
+			</div>
+		</f:if>
+
+		<div class="col-lg-4 text-lg-right text-center">
+			<nav class="">
+				<f:if condition="{pages}">
+					<f:for each="{pages}" as="page">
+						<f:render partial="Footer/Link" arguments="{item: page, status: page.current}"/>
+					</f:for>
+				</f:if>
+			</nav>
+		</div>
+
+	</div>
+
+	<div class="row d-flex align-items-center">
+		<div class="col text-center o-site-footer__credits">
+			Created by
+			<a href="https://www.visual-fx.ch/" target="_blank" title="Website Visual-FX">
+				Visual-FX
+			</a>
+		</div>
+	</div>
+
+</div>
+
+</html>

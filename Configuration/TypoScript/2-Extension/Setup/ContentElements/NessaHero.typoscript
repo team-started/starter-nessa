@@ -1,0 +1,25 @@
+tt_content.nessa_hero =< lib.contentElement
+tt_content.nessa_hero {
+  templateName = NessaHero
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    10 {
+      table = tx_starternessa_hero_element
+      where {
+        data = field:uid
+        wrap = tt_content_record=|
+      }
+
+      orderBy = sorting
+      as = heros
+
+      dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+          references.fieldName = assets
+        }
+      }
+    }
+  }
+}

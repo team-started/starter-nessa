@@ -1,0 +1,32 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<div class="col-lg-4 col-md-6 align-items-stretch">
+	<div class="member">
+		<f:if condition="{file}">
+			<div class="member-img">
+				<f:media file="{file}"
+								 class="img-fluid"
+								 width="{settings.media.width}"
+								 height="{settings.media.height}"
+								 alt="{file.originalResource.alternative}"
+								 cropVariant="{settings.media.cropVariant}"/>
+			</div>
+		</f:if>
+
+		<h4>{data.realname}</h4>
+		<span>{data.company_position}</span>
+
+		<f:if condition="{data.bodytext}">
+			<p>{data.bodytext}</p>
+		</f:if>
+
+		<f:if condition="{data.email}">
+			<i class="icofont-envelope">
+				<f:link.typolink parameter="{data.email}"/>
+			</i>
+		</f:if>
+	</div>
+</div>
+
+</html>

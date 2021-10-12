@@ -1,0 +1,14 @@
+RTE {
+  config {
+    tt_content {
+      bodytext {
+        preset = nessa
+
+        types {
+          nessa_teaser.preset = nessa-minimal
+          textmedia.preset = nessa-headlines
+        }
+      }
+    }
+  }
+}

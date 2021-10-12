@@ -1,0 +1,4 @@
+@import 'EXT:starter_nessa/Configuration/TypoScript/2-Extension/Setup/'
+@import 'EXT:starter_nessa/Configuration/TypoScript/2-Extension/Setup/ContentElements/'
+@import 'EXT:starter_nessa/Configuration/TypoScript/3-Library/Setup/'
+@import 'EXT:starter_nessa/Configuration/TypoScript/4-Page/Setup/'

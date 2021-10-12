@@ -1,0 +1,16 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:if condition="{ctaButtonClass}">
+	<f:else>
+		<f:variable name="ctaButtonClass">o-btn-cta-hero</f:variable>
+	</f:else>
+</f:if>
+
+<f:if condition="{ctaLink} && {ctaButtonText}">
+	<f:link.typolink parameter="{ctaLink}" class="{ctaButtonClass} align-middle">
+		{ctaButtonText}
+	</f:link.typolink>
+</f:if>
+
+</html>

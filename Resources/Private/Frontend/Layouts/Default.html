@@ -1,0 +1,30 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+	<f:render partial="Header" arguments="{_all}"/>
+
+	<main class="c-site__main">
+		<f:comment>
+			# render a breadcrumb menu
+		</f:comment>
+		<f:render partial="Navigation/MenuBreadcrumb" arguments="{menuBreadcrumb: menuBreadcrumb}"/>
+
+		<f:comment>
+			# render page content
+		</f:comment>
+		<f:render section="SiteContent"/>
+
+	</main>
+
+	<footer class="o-site-footer">
+		<f:comment>
+			# render footer content
+		</f:comment>
+		<f:cObject typoscriptObjectPath="lib.starterDynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '2'}" />
+	</footer>
+
+	<a href="#" id="js-back-to-top" class="o-back-to-top">
+		<i class="icofont-simple-up"></i>
+	</a>
+
+</html>

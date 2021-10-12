@@ -1,0 +1,22 @@
+lib.starterTemplateLayout {
+  layoutRootPaths {
+    # remove EXT:starter layouts path
+    5 >
+
+    6 = EXT:starter_nessa/Resources/Private/Frontend/Layouts/
+  }
+
+  partialRootPaths {
+    # remove EXT:starter partials path
+    5 >
+
+    6 = EXT:starter_nessa/Resources/Private/Frontend/Partials/
+  }
+
+  templateRootPaths {
+    # remove EXT:starter templates path
+    5 >
+
+    6 = EXT:starter_nessa/Resources/Private/Frontend/Templates/
+  }
+}

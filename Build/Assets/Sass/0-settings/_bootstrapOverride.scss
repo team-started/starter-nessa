@@ -1,0 +1,59 @@
+// Override color system
+$white: #FFFFFF !default;
+$gray-100: #F8F9FA !default;
+$gray-450: #AAAAAA !default;
+
+$primary: #DB0819 !default;
+$secondary: #0B2341 !default;
+
+$grays: (
+    '100': $gray-100,
+    '450': $gray-450
+);
+
+$theme-colors: (
+    'primary': $primary,
+    'secondary': $secondary
+);
+
+// Override Body
+$body-color: #444444 !default;
+
+// Override Links
+$link-color: map-get($theme-colors, 'primary');
+$link-hover-decoration: none;
+
+$headings-color: map-get($grays, '450');
+
+// Override breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1366px
+);
+
+// Override Components
+$border-width: 2px;
+$border-color: map-get($theme-colors, 'primary');
+
+// Override Typography
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$headings-font-family: 'Poppins', sans-serif;
+
+// Override Button
+$btn-font-weight: 500;
+$btn-font-family: $headings-font-family;
+
+// Override Carousel
+$carousel-indicator-width: 12px;
+$carousel-indicator-height: 12px;
+$carousel-indicator-active-bg: map-get($theme-colors, 'primary');
+$carousel-indicator-transition: opacity .3s ease;
+
+$carousel-control-icon-width: auto;
+
+// Override Breadcrumb
+$breadcrumb-bg: $gray-100;

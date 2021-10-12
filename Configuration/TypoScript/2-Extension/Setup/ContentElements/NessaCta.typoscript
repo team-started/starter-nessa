@@ -1,0 +1,5 @@
+
+tt_content.nessa_cta =< lib.contentElement
+tt_content.nessa_cta {
+  templateName = NessaCta
+}

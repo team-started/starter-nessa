@@ -1,0 +1,29 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<div class="col-lg-4 col-md-6 portfolio-item filter-{assetItem.category.uid}" data-category="filter-{assetItem.category.uid}">
+	<f:media file="{assetItem.file}"
+					 class="img-fluid"
+					 alt="{assetItem.file.properties.alternative}"/>
+
+	<div class="portfolio-info">
+		<h4>{assetItem.file.properties.title}</h4>
+		<p>{assetItem.category.title}</p>
+
+		<a href="{f:uri.image(image: assetItem.file)}"
+			 data-gall="portfolioGallery"
+			 class="js-portfolio__gallery preview-link"
+			 title="{assetItem.file.properties.title}"
+		>
+			<i class="icofont-plus"></i>
+		</a>
+
+		<f:if condition="{assetItem.file.properties.nessa_portfolio_link}">
+			<f:link.typolink parameter="{assetItem.file.properties.nessa_portfolio_link}" class="details-link">
+				<i class="icofont-link"></i>
+			</f:link.typolink>
+		</f:if>
+	</div>
+</div>
+
+</html>

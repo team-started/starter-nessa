@@ -1,0 +1,19 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:if condition="{item.current}">
+	<f:then>
+		<li>
+			<f:format.raw>{item.title}</f:format.raw>
+		</li>
+	</f:then>
+	<f:else if="{item.active}">
+		<li>
+			<a href="{item.link}" class="c-breadcrumb-nav__link c-breadcrumb-nav__link_active">
+				<f:format.raw>{item.title}</f:format.raw>
+			</a>
+		</li>
+	</f:else>
+</f:if>
+
+</html>
