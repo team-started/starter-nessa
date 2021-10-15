@@ -1,6 +1,6 @@
 <?php
 
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF['starter_nessa'] = [
     'title' => 'Starter nessa',
     'description' => 'Theme extension for EXT:starter with bootstrap',
     'category' => 'theme',
