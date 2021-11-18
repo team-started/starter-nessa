@@ -33,8 +33,7 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
-    )
-    {
+    ) {
         /**@var ResourceFactory $resourceFactory*/
         $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
 
@@ -64,8 +63,8 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
                     'file' => $resourceFactory->getFileObject($record['uid']),
                     'category' => [
                         'uid' => $record['categoryUid'],
-                        'title' => $record['title']
-                    ]
+                        'title' => $record['title'],
+                    ],
                 ];
                 array_push($categoriesWithData, $record['categoryUid']);
             }

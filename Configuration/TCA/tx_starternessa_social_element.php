@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 return (function () {
@@ -158,7 +159,7 @@ return (function () {
                     'type' => 'input',
                     'size' => 50,
                     'max' => 255,
-                    'eval' => 'trim,required'
+                    'eval' => 'trim,required',
                 ],
             ],
             'social_link' => [
@@ -176,12 +177,12 @@ return (function () {
                             'options' => [
                                 'title' => $translationFile . 'tx_starternessa_social_element.link',
                                 'blindLinkOptions' => 'page, file, folder, telephone, spec, mail',
-                                'blindLinkFields' => 'class, params, target'
+                                'blindLinkFields' => 'class, params, target',
                             ],
                         ],
                     ],
-                    'softref' => 'typolink'
-                ]
+                    'softref' => 'typolink',
+                ],
             ],
             'icon' => [
                 'exclude' => true,
@@ -193,11 +194,11 @@ return (function () {
                     'items' => [
                         [
                             'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
-                            ''
+                            '',
                         ],
                     ],
-                    'default' => ''
-                ]
+                    'default' => '',
+                ],
             ],
 
             'l10n_diffsource' => [

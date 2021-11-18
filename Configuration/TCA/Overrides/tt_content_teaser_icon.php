@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -36,7 +37,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                                             'uid_local' => [
                                                 'config' => [
                                                     'appearance' => [
-                                                        'elementBrowserAllowed' => 'svg'
+                                                        'elementBrowserAllowed' => 'svg',
                                                     ],
                                                 ],
                                             ],
@@ -45,17 +46,17 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                                             '0' => [
                                                 'showitem' => '
                                                     --palette--;;nessaTeaserIconOverlayPalette,
-                                                    --palette--;;filePalette'
+                                                    --palette--;;filePalette',
                                             ],
                                             \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
                                                 'showitem' => '
                                                     --palette--;;nessaTeaserIconOverlayPalette,
-                                                    --palette--;;filePalette'
+                                                    --palette--;;filePalette',
                                             ],
                                         ],
-                                    ]
-                                ]
-                            ]
+                                    ],
+                                ],
+                            ],
                         ],
                         'types' => [
                             '1' => [
@@ -73,10 +74,10 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                                 ',
                             ],
                         ],
-                    ]
-                ]
-            ]
-        ]
+                    ],
+                ],
+            ],
+        ],
     ];
 
     ExtensionManagementUtility::addPlugin(

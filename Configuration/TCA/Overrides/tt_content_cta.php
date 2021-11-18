@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -24,7 +25,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                 rowDescription,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-        '
+        ',
     ];
 
     ExtensionManagementUtility::addPlugin(

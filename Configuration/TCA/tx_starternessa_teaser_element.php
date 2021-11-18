@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -169,7 +170,7 @@ return (function () {
                     'type' => 'input',
                     'size' => 50,
                     'max' => 255,
-                    'eval' => 'trim,required'
+                    'eval' => 'trim,required',
                 ],
             ],
             'link' => [
@@ -186,12 +187,12 @@ return (function () {
                             'options' => [
                                 'title' => $translationFile . 'tx_starternessa_teaser_element.link',
                                 'blindLinkOptions' => 'folder, spec',
-                                'blindLinkFields' => 'class, params, target'
+                                'blindLinkFields' => 'class, params, target',
                             ],
                         ],
                     ],
-                    'softref' => 'typolink'
-                ]
+                    'softref' => 'typolink',
+                ],
             ],
             'link_text' => [
                 'l10n_mode' => 'prefixLangTitle',
@@ -212,11 +213,11 @@ return (function () {
                     'items' => [
                         [
                             'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
-                            ''
+                            '',
                         ],
                     ],
-                    'default' => ''
-                ]
+                    'default' => '',
+                ],
             ],
             'assets' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
@@ -224,7 +225,7 @@ return (function () {
                     'assets',
                     [
                         'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference'
+                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
                         ],
                         'minitems' => 1,
                         'maxitems' => 1,
@@ -235,7 +236,7 @@ return (function () {
                                 'uid_local' => [
                                     'config' => [
                                         'appearance' => [
-                                            'elementBrowserAllowed' => 'jpg,jpeg,png'
+                                            'elementBrowserAllowed' => 'jpg,jpeg,png',
                                         ],
                                     ],
                                 ],
@@ -260,18 +261,18 @@ return (function () {
                                 '0' => [
                                     'showitem' => '
                                         --palette--;;nessaTeaserBackgroundOverlayPalette,
-                                        --palette--;;filePalette'
+                                        --palette--;;filePalette',
                                 ],
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
                                     'showitem' => '
                                         --palette--;;nessaTeaserBackgroundOverlayPalette,
-                                        --palette--;;filePalette'
+                                        --palette--;;filePalette',
                                 ],
                             ],
                         ],
                     ],
                     $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext']
-                )
+                ),
             ],
             'bodytext' => [
                 'l10n_mode' => 'prefixLangTitle',
@@ -280,7 +281,7 @@ return (function () {
                     'type' => 'text',
                     'cols' => '80',
                     'rows' => '10',
-                ]
+                ],
             ],
 
             'l10n_diffsource' => [

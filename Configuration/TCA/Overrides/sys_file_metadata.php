@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -23,13 +24,13 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                             'options' => [
                                 'title' => $translationFile . 'sys_file_metadata.nessa_portfolio_link',
                                 'blindLinkOptions' => 'file, folder, mail, spec, telephone',
-                                'blindLinkFields' => 'class, params, target'
+                                'blindLinkFields' => 'class, params, target',
                             ],
                         ],
                     ],
-                    'softref' => 'typolink'
-                ]
-            ]
+                    'softref' => 'typolink',
+                ],
+            ],
         ]
     );
 

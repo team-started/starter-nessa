@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use StarterTeam\StarterNessa\Configuration;
@@ -48,9 +49,9 @@ ExtensionManagementUtility::registerPageTSConfigFile(
                         'enabledControls' => [
                             'info' => false,
                         ],
-                    ]
+                    ],
                 ],
-            ]
+            ],
         ]
     );
 

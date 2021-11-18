@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -29,14 +30,14 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
             'bodytext' => [
                 'config' => [
                     'enableRichtext' => true,
-                ]
+                ],
             ],
             'selected_categories' => [
                 'config' => [
                     'minitems' => 1,
-                ]
+                ],
             ],
-        ]
+        ],
     ];
 
     ExtensionManagementUtility::addPlugin(

@@ -9,7 +9,7 @@ class Configuration
 {
     const DEFAULT_BACKEND_LAYOUTS = [
         'DefaultLayout',
-        'HeroLayout'
+        'HeroLayout',
     ];
 
     /**
@@ -20,52 +20,52 @@ class Configuration
         'nessa_cta' => [
             'typeIconClass' => 'starter-ctype-nessa_cta',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-target.svg',
-            'previewTemplate' => 'Cta'
+            'previewTemplate' => 'Cta',
         ],
         'nessa_team' => [
             'typeIconClass' => 'starter-ctype-nessa_team',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/overlay/overlay-backenduser.svg',
-            'previewTemplate' => 'Team'
+            'previewTemplate' => 'Team',
         ],
         'nessa_teaser' => [
             'typeIconClass' => 'starter-ctype-nessa_teaser',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-menu-thumbnail.svg',
-            'previewTemplate' => 'Teaser'
+            'previewTemplate' => 'Teaser',
         ],
         'nessa_hero' => [
             'typeIconClass' => 'starter-ctype-nessa_hero',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-carousel.svg',
-            'previewTemplate' => 'Hero'
+            'previewTemplate' => 'Hero',
         ],
         'nessa_partner' => [
             'typeIconClass' => 'starter-ctype-nessa_partner',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/apps/apps-pagetree-page-backend-user-root.svg',
-            'previewTemplate' => 'Partner'
+            'previewTemplate' => 'Partner',
         ],
         'nessa_portfolio' => [
             'typeIconClass' => 'starter-ctype-nessa_portfolio',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-target.svg',
-            'previewTemplate' => 'Portfolio'
+            'previewTemplate' => 'Portfolio',
         ],
         'nessa_footer' => [
             'typeIconClass' => 'starter-ctype-nessa_footer',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-special-div.svg',
-            'previewTemplate' => 'Footer'
+            'previewTemplate' => 'Footer',
         ],
         'nessa_teaser_background' => [
             'typeIconClass' => 'starter-ctype-nessa_teaser_background',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-card.svg',
-            'previewTemplate' => 'TeaserBackground'
+            'previewTemplate' => 'TeaserBackground',
         ],
         'nessa_download_list' => [
             'typeIconClass' => 'starter-ctype-nessa_download_list',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/actions/actions-database-export.svg',
-            'previewTemplate' => 'DownloadList'
+            'previewTemplate' => 'DownloadList',
         ],
         'nessa_teaser_icon' => [
             'typeIconClass' => 'starter-ctype-nessa_teaser_icon',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-card.svg',
-            'previewTemplate' => 'TeaserIcon'
+            'previewTemplate' => 'TeaserIcon',
         ],
     ];
 
@@ -89,7 +89,7 @@ class Configuration
         'tx_starternessa_social_element' => [
             'typeIconClass' => 'starter-table-tx_starternessa_social_element',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/apps/apps-pagetree-page-shortcut-external.svg',
-        ]
+        ],
     ];
 
     /**

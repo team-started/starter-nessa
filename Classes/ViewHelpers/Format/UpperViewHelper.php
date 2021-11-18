@@ -31,7 +31,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderS
  *    {text -> starterteam:format.upper()}
  *
  * SOME TEXT
- *
  */
 class UpperViewHelper extends AbstractViewHelper
 {

@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -23,12 +24,12 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                             'options' => [
                                 'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
                                 'blindLinkOptions' => 'folder, spec, telephone',
-                                'blindLinkFields' => 'class, params, target'
+                                'blindLinkFields' => 'class, params, target',
                             ],
                         ],
                     ],
-                    'softref' => 'typolink'
-                ]
+                    'softref' => 'typolink',
+                ],
             ],
             'nessa_ctalink_text' => [
                 'l10n_mode' => 'prefixLangTitle',
@@ -65,9 +66,9 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                         'enabledControls' => [
                             'info' => false,
                         ],
-                    ]
+                    ],
                 ],
-            ]
+            ],
         ]
     );
 

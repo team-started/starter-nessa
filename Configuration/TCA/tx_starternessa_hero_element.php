@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -76,8 +77,8 @@ return (function () {
             ',
             ],
             'cta' => [
-                'showitem' => 'ctalink, ctalink_text'
-            ]
+                'showitem' => 'ctalink, ctalink_text',
+            ],
         ],
 
         'columns' => [
@@ -167,7 +168,7 @@ return (function () {
                     'type' => 'input',
                     'size' => 50,
                     'max' => 255,
-                    'eval' => 'trim,required'
+                    'eval' => 'trim,required',
                 ],
             ],
             'ctalink' => [
@@ -184,12 +185,12 @@ return (function () {
                             'options' => [
                                 'title' => $translationFile . 'tt_content.nessa_ctalink_formlabel',
                                 'blindLinkOptions' => 'folder, spec, telephone, url',
-                                'blindLinkFields' => 'class, params, target'
+                                'blindLinkFields' => 'class, params, target',
                             ],
                         ],
                     ],
-                    'softref' => 'typolink'
-                ]
+                    'softref' => 'typolink',
+                ],
             ],
             'ctalink_text' => [
                 'l10n_mode' => 'prefixLangTitle',
@@ -207,7 +208,7 @@ return (function () {
                     'assets',
                     [
                         'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference'
+                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
                         ],
                         'minitems' => 1,
                         'maxitems' => 1,
@@ -218,7 +219,7 @@ return (function () {
                                 'uid_local' => [
                                     'config' => [
                                         'appearance' => [
-                                            'elementBrowserAllowed' => 'jpg,jpeg,png'
+                                            'elementBrowserAllowed' => 'jpg,jpeg,png',
                                         ],
                                     ],
                                 ],
@@ -227,23 +228,23 @@ return (function () {
                                 '0' => [
                                     'showitem' => '
                                 --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette'
+                                --palette--;;filePalette',
                                 ],
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
                                     'showitem' => '
                                 --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette'
+                                --palette--;;filePalette',
                                 ],
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
                                     'showitem' => '
                                 --palette--;;videoOverlayPalette,
-                                --palette--;;filePalette'
+                                --palette--;;filePalette',
                                 ],
                             ],
                         ],
                     ],
                     $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext']
-                )
+                ),
             ],
             'bodytext' => [
                 'l10n_mode' => 'prefixLangTitle',
@@ -252,7 +253,7 @@ return (function () {
                     'type' => 'text',
                     'cols' => '80',
                     'rows' => '10',
-                ]
+                ],
             ],
 
             'l10n_diffsource' => [

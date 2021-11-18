@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 (function () {
@@ -6,6 +7,6 @@ defined('TYPO3_MODE') || die();
         'config' => [
             'minitems' => 1,
             'maxitems' => 1,
-        ]
+        ],
     ];
 })();

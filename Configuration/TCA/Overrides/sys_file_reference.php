@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use TYPO3\CMS\Core\Utility\ArrayUtility;
@@ -8,17 +9,17 @@ ArrayUtility::mergeRecursiveWithOverrule(
     [
         'palettes' => [
             'nessaMemberOverlayPalette' => [
-                'showitem' => 'title,alternative,--linebreak--,crop'
+                'showitem' => 'title,alternative,--linebreak--,crop',
             ],
             'nessaTeaserBackgroundOverlayPalette' => [
-                'showitem' => 'title,--linebreak--,crop'
+                'showitem' => 'title,--linebreak--,crop',
             ],
             'nessaTeaserIconOverlayPalette' => [
-                'showitem' => 'title'
+                'showitem' => 'title',
             ],
             'nessaPartnerOverlayPalette' => [
-                'showitem' => 'title,alternative,--linebreak--,link'
-            ]
-        ]
+                'showitem' => 'title,alternative,--linebreak--,link',
+            ],
+        ],
     ]
 );

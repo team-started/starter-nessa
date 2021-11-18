@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use StarterTeam\StarterNessa\Configuration;
@@ -8,7 +9,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
     $tables = array_keys(Configuration::getContentElementTables());
     foreach ($tables as $table) {
         ExtensionManagementUtility::allowTableOnStandardPages(
-            (string) $table
+            (string)$table
         );
     }
 })();

@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use TYPO3\CMS\Core\Resource\File;
@@ -177,7 +178,7 @@ return (function () {
                     'type' => 'input',
                     'size' => 50,
                     'max' => 255,
-                    'eval' => 'trim,required'
+                    'eval' => 'trim,required',
                 ],
             ],
             'company_position' => [
@@ -187,7 +188,7 @@ return (function () {
                     'type' => 'input',
                     'size' => 50,
                     'max' => 255,
-                    'eval' => 'trim,required'
+                    'eval' => 'trim,required',
                 ],
             ],
             'email' => [
@@ -205,12 +206,12 @@ return (function () {
                             'options' => [
                                 'title' => $translationFile . 'tx_starternessa_team_element.link',
                                 'blindLinkOptions' => 'page, file, folder, spec, telephone, url',
-                                'blindLinkFields' => 'class, params, target'
+                                'blindLinkFields' => 'class, params, target',
                             ],
                         ],
                     ],
-                    'softref' => 'typolink'
-                ]
+                    'softref' => 'typolink',
+                ],
             ],
             'bodytext' => [
                 'l10n_mode' => 'prefixLangTitle',
@@ -219,8 +220,8 @@ return (function () {
                     'type' => 'text',
                     'cols' => '80',
                     'rows' => '10',
-                    'max' => 90
-                ]
+                    'max' => 90,
+                ],
             ],
             'assets' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
@@ -228,7 +229,7 @@ return (function () {
                     'assets',
                     [
                         'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference'
+                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
                         ],
                         'maxitems' => 1,
                         // custom configuration for displaying fields in the overlay/reference table
@@ -238,7 +239,7 @@ return (function () {
                                 'uid_local' => [
                                     'config' => [
                                         'appearance' => [
-                                            'elementBrowserAllowed' => 'jpg,jpeg,png'
+                                            'elementBrowserAllowed' => 'jpg,jpeg,png',
                                         ],
                                     ],
                                 ],
@@ -263,18 +264,18 @@ return (function () {
                                 '0' => [
                                     'showitem' => '
                                         --palette--;;nessaMemberOverlayPalette,
-                                        --palette--;;filePalette'
+                                        --palette--;;filePalette',
                                 ],
                                 File::FILETYPE_IMAGE => [
                                     'showitem' => '
                                         --palette--;;nessaMemberOverlayPalette,
-                                        --palette--;;filePalette'
+                                        --palette--;;filePalette',
                                 ],
                             ],
                         ],
                     ],
                     $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext']
-                )
+                ),
             ],
         ],
     ];

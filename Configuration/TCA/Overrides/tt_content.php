@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use StarterTeam\StarterNessa\Configuration;
@@ -11,7 +12,7 @@ use StarterTeam\StarterNessa\Configuration;
             [
                 'ctrl' => [
                     'typeicon_classes' => [
-                        $ceId => $properties['typeIconClass']
+                        $ceId => $properties['typeIconClass'],
                     ],
                 ],
             ]
@@ -26,13 +27,13 @@ use StarterTeam\StarterNessa\Configuration;
                 'nessaCta' => [
                     'showitem' => '
                         nessa_ctalink, nessa_ctalink_text
-                    '
+                    ',
                 ],
                 'nessaUploads' => [
                     'showitem' =>
                         'media;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.ALT.uploads_formlabel',
                 ],
-            ]
+            ],
         ]
     );
 })();

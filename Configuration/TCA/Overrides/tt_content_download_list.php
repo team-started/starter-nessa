@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -32,24 +33,24 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                             'uid_local' => [
                                 'config' => [
                                     'appearance' => [
-                                        'elementBrowserAllowed' => 'doc,docx,jpg,jpeg,pdf,ppt,pptx,xls,xlsx,zip'
+                                        'elementBrowserAllowed' => 'doc,docx,jpg,jpeg,pdf,ppt,pptx,xls,xlsx,zip',
                                     ],
                                 ],
                             ],
                             'title' => [
                                 'label' => $translationFile . 'sys_file_reference.title',
                                 'config' => [
-                                    'max' => 80
-                                ]
+                                    'max' => 80,
+                                ],
                             ],
                             'description' => [
                                 'label' => $translationFile . 'sys_file_reference.description',
-                            ]
+                            ],
                         ],
                     ],
                 ],
             ],
-        ]
+        ],
     ];
 
     ExtensionManagementUtility::addPlugin(

@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -29,7 +30,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
             'bodytext' => [
                 'config' => [
                     'enableRichtext' => true,
-                ]
+                ],
             ],
             'assets' => [
                 'label' => $translationFile . 'tt_content.' . $cType . '.partner',
@@ -40,7 +41,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                             'uid_local' => [
                                 'config' => [
                                     'appearance' => [
-                                        'elementBrowserAllowed' => 'jpg,jpeg,png,svg'
+                                        'elementBrowserAllowed' => 'jpg,jpeg,png,svg',
                                     ],
                                 ],
                             ],
@@ -49,13 +50,13 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                             \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
                                 'showitem' => '
                                 --palette--;;nessaPartnerOverlayPalette,
-                                --palette--;;filePalette'
+                                --palette--;;filePalette',
                             ],
-                        ]
-                    ]
-                ]
-            ]
-        ]
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ];
 
     ExtensionManagementUtility::addPlugin(
