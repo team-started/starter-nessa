@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace StarterTeam\StarterNessa\DataProcessing;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
