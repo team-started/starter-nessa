@@ -2,9 +2,7 @@
 
 defined('TYPO3_MODE') || die();
 
-use TYPO3\CMS\Core\Utility\ArrayUtility;
-
-ArrayUtility::mergeRecursiveWithOverrule(
+\TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
     $GLOBALS['TCA']['sys_file_reference'],
     [
         'palettes' => [

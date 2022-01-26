@@ -2,13 +2,11 @@
 
 defined('TYPO3_MODE') || die();
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
 (function () {
     $translationFile = 'LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:';
     $cType = 'nessa_team';
 
-    ExtensionManagementUtility::addTCAcolumns(
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         [
             'nessa_team_member_element' => [
@@ -70,7 +68,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
         ],
     ];
 
-    ExtensionManagementUtility::addPlugin(
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
         [
             $translationFile . 'CType.I.' . $cType,
             $cType,

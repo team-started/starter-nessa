@@ -2,12 +2,10 @@
 
 defined('TYPO3_MODE') || die();
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
 (function () {
     $translationFile = 'LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:';
 
-    ExtensionManagementUtility::addTCAcolumns(
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         [
             'nessa_ctalink' => [
@@ -72,7 +70,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
         ]
     );
 
-    ExtensionManagementUtility::addToAllTCAtypes(
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
         '--palette--;' . $translationFile . 'palette.cta;nessaCta,',
         'text,textmedia',

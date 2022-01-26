@@ -2,21 +2,18 @@
 
 defined('TYPO3_MODE') || die();
 
-use StarterTeam\StarterNessa\Configuration;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
-ExtensionManagementUtility::registerPageTSConfigFile(
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
     'starter_nessa',
     'Configuration/TSConfig/PageTs.typoscript',
     'PageTs starter_nessa'
 );
 
 (function () {
-    foreach (Configuration::getDefaultBackendLayouts() as $backendLayout) {
+    foreach (\StarterTeam\StarterNessa\Configuration::getDefaultBackendLayouts() as $backendLayout) {
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
             'starter_nessa',
-            'Configuration/TSConfig/BackendLayouts/' . (string)$backendLayout . '.typoscript',
-            'Backend-Layout ' . (string)$backendLayout
+            'Configuration/TSConfig/BackendLayouts/' . $backendLayout . '.typoscript',
+            'Backend-Layout ' . $backendLayout
         );
     }
 

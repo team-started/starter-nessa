@@ -33,10 +33,6 @@ return (function () {
             ],
         ],
 
-        'interface' => [
-            'showRecordFieldList' => 'hidden, header, icon, social_link',
-        ],
-
         'types' => [
             '1' => [
                 'showitem' => '
@@ -130,7 +126,6 @@ return (function () {
                 ],
             ],
             'l10n_parent' => [
-                'exclude' => true,
                 'displayCond' => 'FIELD:sys_language_uid:>:0',
                 'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
                 'config' => [

@@ -9,6 +9,9 @@ namespace StarterTeam\StarterNessa;
  */
 class Configuration
 {
+    /**
+     * @var string[]
+     */
     const DEFAULT_BACKEND_LAYOUTS = [
         'DefaultLayout',
         'HeroLayout',
@@ -96,7 +99,6 @@ class Configuration
 
     /**
      * Return the default defined backend layouts
-     * @return array
      */
     public static function getDefaultBackendLayouts(): array
     {
@@ -105,7 +107,6 @@ class Configuration
 
     /**
      * Return all custom content elements
-     * @return array
      */
     public static function getContentElements(): array
     {
@@ -114,7 +115,6 @@ class Configuration
 
     /**
      * Return all custom content elements tables
-     * @return array
      */
     public static function getContentElementTables(): array
     {

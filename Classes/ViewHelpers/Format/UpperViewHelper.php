@@ -65,9 +65,6 @@ class UpperViewHelper extends AbstractViewHelper
     /**
      * Applies strtoupper() on the specified value.
      *
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
-     * @param \TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext
      * @see https://www.php.net/manual/function.strtoupper.php
      * @return string
      */

@@ -2,11 +2,9 @@
 
 defined('TYPO3_MODE') || die();
 
-use StarterTeam\StarterNessa\Configuration;
-
 (function () {
     // add content element type icons
-    foreach (Configuration::getContentElements() as $ceId => $properties) {
+    foreach (\StarterTeam\StarterNessa\Configuration::getContentElements() as $ceId => $properties) {
         \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
             $GLOBALS['TCA']['tt_content'],
             [

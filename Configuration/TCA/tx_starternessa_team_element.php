@@ -2,9 +2,6 @@
 
 defined('TYPO3_MODE') || die();
 
-use TYPO3\CMS\Core\Resource\File;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
 return (function () {
     $translationFile = 'LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:';
 
@@ -34,10 +31,6 @@ return (function () {
             'typeicon_classes' => [
                 'default' => 'starter-table-tx_starternessa_team_element',
             ],
-        ],
-
-        'interface' => [
-            'showRecordFieldList' => 'hidden, realname, company_position, bodytext',
         ],
 
         'types' => [
@@ -133,7 +126,6 @@ return (function () {
                 ],
             ],
             'l10n_parent' => [
-                'exclude' => true,
                 'displayCond' => 'FIELD:sys_language_uid:>:0',
                 'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
                 'config' => [
@@ -225,7 +217,7 @@ return (function () {
             ],
             'assets' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
-                'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
+                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                     'assets',
                     [
                         'appearance' => [
@@ -266,7 +258,7 @@ return (function () {
                                         --palette--;;nessaMemberOverlayPalette,
                                         --palette--;;filePalette',
                                 ],
-                                File::FILETYPE_IMAGE => [
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
                                     'showitem' => '
                                         --palette--;;nessaMemberOverlayPalette,
                                         --palette--;;filePalette',
