@@ -3,19 +3,19 @@
     "type": "typo3-cms-extension",
     "description": "Theme extension for EXT:starter with bootstrap",
     "license": "proprietary",
-    "authors": [
-        {
-            "name": "Marcel Schmid",
-            "email": "m.schmid@visual-fx.ch"
-        },
-        {
-            "name": "Christian Wolfram",
-            "email": "c.wolfram@chriwo.de"
-        }
-    ],
-    "support": {
-        "issues": "https://gitlab.com/starterteam/team/starter-nessa/-/issues"
-    },
+	"authors": [
+		{
+			"name": "Marcel Schmid",
+			"email": "m.schmid@visual-fx.ch"
+		},
+		{
+			"name": "Christian Wolfram",
+			"email": "c.wolfram@chriwo.de"
+		}
+	],
+	"support": {
+		"issues": "https://gitlab.com/starterteam/team/starter-nessa/-/issues"
+	},
     "require": {
         "php": "^7.4",
         "typo3/cms-core": "^10.4",
