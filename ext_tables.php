@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3') || die();
+defined('TYPO3_MODE') || die();
 
 (function () {
     $tables = array_keys(\StarterTeam\StarterNessa\Configuration::getContentElementTables());

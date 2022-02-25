@@ -1,2 +1,1 @@
-@import 'EXT:starter_nessa/Configuration/TSConfig/BackendLayouts/'
 @import 'EXT:starter_nessa/Configuration/TSConfig/Main/'

@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3') || die();
+defined('TYPO3_MODE') || die();
 
 (function () {
     $GLOBALS['TCA']['tt_content']['types']['textmedia']['columnsOverrides']['assets'] = [
