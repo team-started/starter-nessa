@@ -1,0 +1,25 @@
+{
+	"files.insertFinalNewline": true,
+	"eslint.alwaysShowStatus": true,
+	"eslint.options": {
+		"extensions": [".js", ".html"]
+	},
+	"eslint.validate": ["javascript", "html"],
+	"javascript.format.enable": false,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"[javascript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"[scss]": {
+		"editor.defaultFormatter": "stylelint.vscode-stylelint"
+	},
+	"stylelint.validate": ["css", "scss"],
+	"editor.codeActionsOnSave": {
+		// https://github.com/microsoft/vscode-eslint/blob/master/README.md#release-notes
+		"source.fixAll.eslint": true,
+		"source.fixAll.stylelint": true
+	}
+}
