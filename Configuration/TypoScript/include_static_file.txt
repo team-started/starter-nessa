@@ -1,0 +1,2 @@
+EXT:fluid_styled_content/Configuration/TypoScript/,
+EXT:starter/Configuration/TypoScript/
