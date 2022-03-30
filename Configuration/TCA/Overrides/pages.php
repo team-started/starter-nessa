@@ -5,7 +5,7 @@ defined('TYPO3') || die();
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
     'starter_nessa',
     'Configuration/TSConfig/PageTs.typoscript',
-    'PageTs starter_nessa'
+    'Nessa Theme'
 );
 
 (function () {
