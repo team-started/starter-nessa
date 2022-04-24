@@ -28,6 +28,7 @@ TCEFORM {
 
     // disable EXT:starter fields
     tx_starter_nav_media.disabled = 1
+    tx_starter_background_fluid.disabled = 1
 
     // disable EXT:starter_nessa fields
     nessa_social_element.disabled = 1
