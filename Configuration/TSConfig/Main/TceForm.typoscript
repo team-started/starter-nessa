@@ -77,6 +77,24 @@ TCEFORM {
     tx_starter_celink.disabled = 1
     tx_starter_celink_text.disabled = 1
 
+    tx_starter_ctalink {
+      disabled = 1
+      types {
+        nessa_cta.disabled = 0
+        text.disabled = 0
+        textmedia.disabled = 0
+      }
+    }
+
+    tx_starter_ctalink_text {
+      disabled = 1
+      types {
+        nessa_cta.disabled = 0
+        text.disabled = 0
+        textmedia.disabled = 0
+      }
+    }
+
     assets {
       config {
         appearance {

@@ -33,5 +33,8 @@ defined('TYPO3') || die();
                 ['source' => $property['typeIconPath']]
             );
         }
+
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['starterNessa_CtaFieldUpdateWizard']
+            = \StarterTeam\StarterNessa\Updates\CtaFieldMigration::class;
     }
 })();

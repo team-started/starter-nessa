@@ -8,37 +8,6 @@ defined('TYPO3') || die();
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         [
-            'nessa_ctalink' => [
-                'exclude' => true,
-                'label' => $translationFile . 'tt_content.nessa_ctalink_formlabel',
-                'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputLink',
-                    'size' => 80,
-                    'max' => 1024,
-                    'eval' => 'trim',
-                    'fieldControl' => [
-                        'linkPopup' => [
-                            'options' => [
-                                'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
-                                'blindLinkOptions' => 'folder, spec, telephone',
-                                'blindLinkFields' => 'class, params, target',
-                            ],
-                        ],
-                    ],
-                    'softref' => 'typolink',
-                ],
-            ],
-            'nessa_ctalink_text' => [
-                'l10n_mode' => 'prefixLangTitle',
-                'exclude' => true,
-                'label' => $translationFile . 'tt_content.nessa_ctalink_text_formlabel',
-                'config' => [
-                    'type' => 'input',
-                    'size' => 40,
-                    'max' => 255,
-                ],
-            ],
             'nessa_teaser_element' => [
                 'exclude' => true,
                 'label' => $translationFile . 'teaser_element_formlabel',
@@ -68,12 +37,5 @@ defined('TYPO3') || die();
                 ],
             ],
         ]
-    );
-
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
-        'tt_content',
-        '--palette--;' . $translationFile . 'palette.cta;nessaCta,',
-        'text,textmedia',
-        'after:bodytext'
     );
 })();

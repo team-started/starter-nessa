@@ -9,8 +9,6 @@ CREATE TABLE pages (
 # Extend table structure for table 'tt_content'
 #
 CREATE TABLE tt_content (
-    nessa_ctalink varchar(1024) DEFAULT '' NOT NULL,
-    nessa_ctalink_text varchar(255) DEFAULT '' NOT NULL,
     nessa_team_member_element int(11) DEFAULT '0' NOT NULL,
     nessa_teaser_element int(11) DEFAULT '0' NOT NULL,
     nessa_hero_element int(11) DEFAULT '0' NOT NULL,

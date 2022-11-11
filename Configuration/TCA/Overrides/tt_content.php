@@ -22,11 +22,6 @@ defined('TYPO3') || die();
         $GLOBALS['TCA']['tt_content'],
         [
             'palettes' => [
-                'nessaCta' => [
-                    'showitem' => '
-                        nessa_ctalink, nessa_ctalink_text
-                    ',
-                ],
                 'nessaUploads' => [
                     'showitem' =>
                         'media;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.ALT.uploads_formlabel',
