@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterNessa\Updates;
 
+use Doctrine\DBAL\Driver\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -49,6 +50,7 @@ class CtaFieldMigration implements UpgradeWizardInterface
 
     /**
      * @throws \Doctrine\DBAL\DBALException
+     * @throws Exception
      */
     protected function copyOldFieldValuesToNewFieldValues(): bool
     {
@@ -76,12 +78,12 @@ class CtaFieldMigration implements UpgradeWizardInterface
             ->update($this->table)
             ->set($newFieldName, $queryBuilder->quoteIdentifier($oldFieldName), false)
             ->where(
-                $queryBuilder->expr()->orX(
-                    $queryBuilder->expr()->eq(
+                $queryBuilder->expr()->or(
+                    $queryBuilder->expr()->neq(
                         $newFieldName,
                         $queryBuilder->createNamedParameter('', \PDO::PARAM_STR)
                     ),
-                    $queryBuilder->expr()->isNull($newFieldName)
+                    $queryBuilder->expr()->isNotNull($newFieldName)
                 )
             )
             ->execute();
@@ -121,10 +123,13 @@ class CtaFieldMigration implements UpgradeWizardInterface
         return $queryBuilder->count('uid')
             ->from($this->table)
             ->where(
-                $queryBuilder->expr()->orX([$queryBuilder->expr()->eq(
-                    $fieldName,
-                    $queryBuilder->createNamedParameter('', \PDO::PARAM_STR)
-                ), $queryBuilder->expr()->isNull($fieldName)])
+                $queryBuilder->expr()->or(
+                    $queryBuilder->expr()->neq(
+                        $fieldName,
+                        $queryBuilder->createNamedParameter('', \PDO::PARAM_STR)
+                    ),
+                    $queryBuilder->expr()->isNotNull($fieldName)
+                )
             )
             ->execute()
             ->fetchOne(0);
