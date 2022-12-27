@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterNessa\Updates;
 
+use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\Driver\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
@@ -49,7 +50,7 @@ class CtaFieldMigration implements UpgradeWizardInterface
     }
 
     /**
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      * @throws Exception
      */
     protected function copyOldFieldValuesToNewFieldValues(): bool
@@ -69,7 +70,7 @@ class CtaFieldMigration implements UpgradeWizardInterface
     /**
      * Copy the value from old field to the new field
      *
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function copyFieldData(string $oldFieldName, string $newFieldName)
     {
@@ -92,8 +93,8 @@ class CtaFieldMigration implements UpgradeWizardInterface
     /**
      * Checks whether updates are required.
      *
-     * @throws \Doctrine\DBAL\DBALException
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws DBALException
+     * @throws Exception
      */
     public function updateNecessary(): bool
     {
@@ -108,8 +109,8 @@ class CtaFieldMigration implements UpgradeWizardInterface
     }
 
     /**
-     * @throws \Doctrine\DBAL\DBALException
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws DBALException
+     * @throws Exception
      */
     protected function countOfFieldUpdates(string $fieldName = ''): int
     {

@@ -12,7 +12,7 @@ class Configuration
     /**
      * @var string[]
      */
-    const DEFAULT_BACKEND_LAYOUTS = [
+    public const DEFAULT_BACKEND_LAYOUTS = [
         'DefaultLayout',
         'HeroLayout',
     ];
@@ -21,7 +21,7 @@ class Configuration
      * Array with all content elements and definition of type icons
      * @var array
      */
-    const CONTENT_ELEMENTS = [
+    public const CONTENT_ELEMENTS = [
         'nessa_cta' => [
             'typeIconClass' => 'starter-ctype-nessa_cta',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-target.svg',
@@ -78,7 +78,7 @@ class Configuration
      * Array with all content elements and definition of type icons
      * @var array
      */
-    const CONTENT_ELEMENT_TABLES = [
+    public const CONTENT_ELEMENT_TABLES = [
         'tx_starternessa_team_element' => [
             'typeIconClass' => 'starter-table-tx_starternessa_team_element',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/overlay/overlay-backendusers.svg',

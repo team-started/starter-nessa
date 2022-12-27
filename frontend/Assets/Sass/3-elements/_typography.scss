@@ -11,7 +11,7 @@ $customFont-Poppins: (
     @each $fontValue in $fontValues {
         @include nessa-font-face(
             $family: '"Open Sans"',
-            $src: 'Fonts/open-sans-v17-latin/open-sans-v17-latin-#{$fontValue}',
+            $src: '../Fonts/open-sans-v17-latin/open-sans-v17-latin-#{$fontValue}',
             $weight: $fontValue,
             $style: $fontWeight,
             $woff2: true
@@ -23,7 +23,7 @@ $customFont-Poppins: (
     @each $fontValue in $fontValues {
         @include nessa-font-face(
             $family: 'Poppins',
-            $src: 'Fonts/poppins-v12-latin/poppins-v12-latin-#{$fontValue}',
+            $src: '../Fonts/poppins-v12-latin/poppins-v12-latin-#{$fontValue}',
             $weight: $fontValue,
             $style: $fontWeight,
             $woff2: true
@@ -33,7 +33,7 @@ $customFont-Poppins: (
 
 @include nessa-font-face(
     $family: 'IcoFont',
-    $src: 'Fonts/icoFont/icofont',
+    $src: '../Fonts/icoFont/icofont',
     $weight: normal,
     $style: 'Regular',
     $woff2: true
