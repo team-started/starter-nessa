@@ -1,0 +1,19 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<div class="col-sm-6 col-lg-4 pb-4">
+    <a href="{f:uri.image(image:file, maxWidth:800)}"
+       data-gall="portfolioFileCollectionsGallery"
+       data-title="{file.properties.title}"
+       class="js-portfolio__collections-gallery"
+    >
+        <f:media file="{file}"
+                 class="img-fluid"
+                 width="{settings.media.width}"
+                 height="{settings.media.height}"
+                 title="{file.properties.title}"
+                 alt="{file.properties.alternative}"/>
+    </a>
+</div>
+
+</html>

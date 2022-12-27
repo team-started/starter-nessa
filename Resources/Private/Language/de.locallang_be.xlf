@@ -99,6 +99,14 @@
 				<source>Element for categorizing images for a portfolio</source>
 				<target>Element zur Kategorisierung von Bildern für ein Portfolio</target>
 			</trans-unit>
+			<trans-unit id="CType.I.nessa_portfolio_file_collections">
+				<source>Portfolio with file collection(s)</source>
+				<target>Portfolio mit Dateisammlungen</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_portfolio_file_collections.description">
+				<source>Show a collection of files as portfolio</source>
+				<target>Darstellung von einer oder mehreren Dateisammlungen als Portfolio</target>
+			</trans-unit>
 			<trans-unit id="CType.I.nessa_partner">
 				<source>Partner</source>
 				<target>Partner</target>

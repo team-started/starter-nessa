@@ -9,6 +9,7 @@ page {
 
   includeJSFooter {
     file_1 = EXT:starter_nessa/Resources/Public/JavaScript/app.min.js
+    file_2 = EXT:starter_nessa/Resources/Public/JavaScript/runtime.min.js
   }
 
   includeCSS {

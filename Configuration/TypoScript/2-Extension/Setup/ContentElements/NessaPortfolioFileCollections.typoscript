@@ -1,0 +1,23 @@
+
+tt_content.nessa_portfolio_file_collections =< lib.contentElement
+tt_content.nessa_portfolio_file_collections {
+  templateName = NessaPortfolioFileCollections
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      references.fieldName = media
+      collections.field = file_collections
+      sorting.field = filelink_sorting
+      sorting.direction.field = filelink_sorting_direction
+    }
+  }
+
+  settings {
+    media {
+      viewPorts = 576,768,992,1200,1400
+      width = 350c
+      height = 350c
+    }
+  }
+}

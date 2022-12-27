@@ -52,6 +52,11 @@ class Configuration
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-target.svg',
             'previewTemplate' => 'Portfolio',
         ],
+        'nessa_portfolio_file_collections' => [
+            'typeIconClass' => 'starter-ctype-nessa_portfolio_file_collections',
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-menu-thumbnail.svg',
+            'previewTemplate' => 'PortfolioFileCollections',
+        ],
         'nessa_footer' => [
             'typeIconClass' => 'starter-ctype-nessa_footer',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-special-div.svg',

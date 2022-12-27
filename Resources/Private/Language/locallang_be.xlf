@@ -76,6 +76,12 @@
 			<trans-unit id="CType.I.nessa_portfolio.description">
 				<source>Element for categorizing images for a portfolio</source>
 			</trans-unit>
+			<trans-unit id="CType.I.nessa_portfolio_file_collections">
+				<source>Portfolio with file collection(s)</source>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_portfolio_file_collections.description">
+				<source>Show a collection of files as portfolio</source>
+			</trans-unit>
 			<trans-unit id="CType.I.nessa_partner">
 				<source>Partner</source>
 			</trans-unit>

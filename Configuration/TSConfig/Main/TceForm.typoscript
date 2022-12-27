@@ -45,6 +45,7 @@ TCEFORM {
     CType.keepItems := addToList(nessa_hero)
     CType.keepItems := addToList(nessa_partner)
     CType.keepItems := addToList(nessa_portfolio)
+    CType.keepItems := addToList(nessa_portfolio_file_collections)
     CType.keepItems := addToList(nessa_footer)
     CType.keepItems := addToList(nessa_teaser_background)
     CType.keepItems := addToList(nessa_download_list)
