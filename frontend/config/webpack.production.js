@@ -16,7 +16,7 @@ module.exports = merge(common, {
     devtool: BUILD.useSourceMap ? BUILD.typeSourceMap : false,
 
     output: {
-        publicPath: '/',
+        publicPath: '../',
         path: BUILD.dist,
         filename: BUILD.hashJs
             ? `${BUILD.jsFolder}/[name].[hash].min.js`
