@@ -35,7 +35,7 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
-    ) {
+    ): array {
         /**@var ResourceFactory $resourceFactory*/
         $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
 
@@ -45,11 +45,11 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
         $categories = [];
         if (!empty($processedData['portfolioCategories'])) {
             foreach ($processedData['portfolioCategories'] as $category) {
-                array_push($categories, $category['data']['uid']);
+                $categories[] = $category['data']['uid'];
             }
         }
 
-        if (empty($categories)) {
+        if ($categories === []) {
             return $processedData;
         }
 
@@ -67,7 +67,7 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
                     'title' => $record['title'],
                 ],
             ];
-            array_push($categoriesWithData, $record['categoryUid']);
+            $categoriesWithData[] = $record['categoryUid'];
         }
 
         $result = array_unique($categoriesWithData);

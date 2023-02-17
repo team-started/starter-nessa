@@ -41,15 +41,11 @@ class UpperViewHelper extends AbstractViewHelper
 
     /**
      * No output escaping as some tags may be allowed
-     *
-     * @var bool
      */
     protected $escapeOutput = false;
 
     /**
      * To ensure all tags are removed, child node's output must not be escaped
-     *
-     * @var bool
      */
     protected $escapeChildren = false;
 
@@ -67,13 +63,12 @@ class UpperViewHelper extends AbstractViewHelper
      * Applies strtoupper() on the specified value.
      *
      * @see https://www.php.net/manual/function.strtoupper.php
-     * @return string
      */
     public static function renderStatic(
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    ) {
+    ):string  {
         $value = $renderChildrenClosure();
         return strtoupper((string)$value);
     }
