@@ -42,7 +42,8 @@ class CtaFieldMigration implements UpgradeWizardInterface
     }
 
     /**
-     * @inheritDoc
+     * @throws DBALException
+     * @throws Exception
      */
     public function executeUpdate(): bool
     {
@@ -98,7 +99,7 @@ class CtaFieldMigration implements UpgradeWizardInterface
      */
     public function updateNecessary(): bool
     {
-        return (bool) $this->countOfFieldUpdates();
+        return (bool)$this->countOfFieldUpdates();
     }
 
     public function getPrerequisites(): array
@@ -133,6 +134,6 @@ class CtaFieldMigration implements UpgradeWizardInterface
                 )
             )
             ->execute()
-            ->fetchOne(0);
+            ->fetchOne();
     }
 }

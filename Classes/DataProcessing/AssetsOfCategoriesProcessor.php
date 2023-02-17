@@ -8,7 +8,6 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Frontend\ContentObject\ContentDataProcessor;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -17,17 +16,11 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  */
 class AssetsOfCategoriesProcessor implements DataProcessorInterface
 {
-    /**
-     * @var ContentDataProcessor
-     */
-    protected $contentDataProcessor;
+    protected ResourceFactory $resourceFactory;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
+    public function __construct(ResourceFactory $resourceFactory)
     {
-        $this->contentDataProcessor = GeneralUtility::makeInstance(ContentDataProcessor::class);
+        $this->resourceFactory = $resourceFactory;
     }
 
     public function process(
@@ -36,9 +29,6 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        /**@var ResourceFactory $resourceFactory*/
-        $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
-
         // The variable to be used within the result
         $targetVariableName = $cObj->stdWrapValue('as', $processorConfiguration, 'portfolioAssets');
 
@@ -61,7 +51,7 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
         $categoriesWithData = [];
         foreach ($fileRecords as $record) {
             $processedData[$targetVariableName][] = [
-                'file' => $resourceFactory->getFileObject($record['uid']),
+                'file' => $this->resourceFactory->getFileObject($record['uid']),
                 'category' => [
                     'uid' => $record['categoryUid'],
                     'title' => $record['title'],
