@@ -73,7 +73,7 @@ class CtaFieldMigration implements UpgradeWizardInterface
      *
      * @throws DBALException
      */
-    protected function copyFieldData(string $oldFieldName, string $newFieldName)
+    protected function copyFieldData(string $oldFieldName, string $newFieldName): void
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($this->table);
         $queryBuilder
@@ -122,7 +122,8 @@ class CtaFieldMigration implements UpgradeWizardInterface
             ->getQueryBuilderForTable($this->table);
         $queryBuilder->getRestrictions()->removeAll();
 
-        return $queryBuilder->count('uid')
+        $result = $queryBuilder
+            ->count('uid')
             ->from($this->table)
             ->where(
                 $queryBuilder->expr()->or(
@@ -135,5 +136,11 @@ class CtaFieldMigration implements UpgradeWizardInterface
             )
             ->execute()
             ->fetchOne();
+
+        if (is_int($result)) {
+            return $result;
+        }
+
+        return 0;
     }
 }

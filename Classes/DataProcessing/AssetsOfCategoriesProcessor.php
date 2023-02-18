@@ -43,10 +43,8 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
             return $processedData;
         }
 
-        $fileRecords = $this->getRecords(
-            $categories,
-            $cObj->stdWrapValue('sorting', $processorConfiguration, 'name')
-        );
+        $sortBy = (string)$cObj->stdWrapValue('sorting', $processorConfiguration, 'name');
+        $fileRecords = $this->getRecords($categories, $sortBy);
 
         $categoriesWithData = [];
         foreach ($fileRecords as $record) {
