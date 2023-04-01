@@ -6,6 +6,7 @@ namespace StarterTeam\StarterNessa\Updates;
 
 use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\Driver\Exception;
+use Doctrine\DBAL\Schema\Column;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -115,13 +116,33 @@ class CtaFieldMigration implements UpgradeWizardInterface
      */
     protected function countOfFieldUpdates(string $fieldName = ''): int
     {
+        $oldFieldExists = false;
         $fieldName = empty($fieldName) ? $this->oldFieldNames[0] : $fieldName;
+
+        /**@var Column[] $tableColumns*/
+        $tableColumns = GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getConnectionForTable($this->table)
+            ->getSchemaManager()
+            ->listTableColumns($this->table);
+
+        foreach ($tableColumns as $column) {
+            if ($column->getName() !== $fieldName) {
+                continue;
+            }
+
+            $oldFieldExists = true;
+            break;
+        }
+
+        if (!$oldFieldExists) {
+            return 0;
+        }
 
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable($this->table);
-        $queryBuilder->getRestrictions()->removeAll();
 
+        $queryBuilder->getRestrictions()->removeAll();
         $result = $queryBuilder
             ->count('uid')
             ->from($this->table)
