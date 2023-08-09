@@ -5,6 +5,14 @@
 
 <f:section name="Main">
 
+    <f:if condition="{data.bodytext}">
+        <div class="row">
+            <div class="col mb-4">
+                <f:format.html>{data.bodytext}</f:format.html>
+            </div>
+        </div>
+    </f:if>
+
 	<div class="row">
 
 		<f:for each="{downloadFiles}" as="downloadFile">
@@ -17,7 +25,12 @@
 						</div>
 
 						<div class="media-body">
-							<h3 class="c-download-list__headline mt-0">{downloadFile.title}</h3>
+							<h3 class="c-download-list__headline mt-0">
+                                <f:if condition="{downloadFile.title}">
+                                    <f:then>{downloadFile.title}</f:then>
+                                    <f:else>{downloadFile.name}</f:else>
+                                </f:if>
+                            </h3>
 							<p class="c-download-list__description">
 								{downloadFile.description}
 								<span class="c-download-list__meta">

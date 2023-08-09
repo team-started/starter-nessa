@@ -16,17 +16,4 @@ defined('TYPO3') || die();
             ]
         );
     }
-
-    // define new palettes for content elements
-    \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
-        $GLOBALS['TCA']['tt_content'],
-        [
-            'palettes' => [
-                'nessaUploads' => [
-                    'showitem' =>
-                        'media;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.ALT.uploads_formlabel',
-                ],
-            ],
-        ]
-    );
 })();

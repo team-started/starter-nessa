@@ -83,14 +83,6 @@
 				<source>Simple element with information for the website footer</source>
 				<target>Einfaches Element mit Informationen für den Website-Footer</target>
 			</trans-unit>
-			<trans-unit id="CType.I.nessa_download_list">
-				<source>Download list</source>
-				<target>Download Liste</target>
-			</trans-unit>
-			<trans-unit id="CType.I.nessa_download_list.description">
-				<source>Element to offer different downloads</source>
-				<target>Element um verschiedene Downloads anzubieten</target>
-			</trans-unit>
 			<trans-unit id="CType.I.nessa_portfolio">
 				<source>Portfolio</source>
 				<target>Portfolio</target>
@@ -143,15 +135,6 @@
 			<trans-unit id="tt_content.nessa_partner.partner">
 				<source>Company logo</source>
 				<target>Unternehmenslogo</target>
-			</trans-unit>
-
-			<trans-unit id="sys_file_reference.title">
-				<source>Header</source>
-				<target>Überschrift</target>
-			</trans-unit>
-			<trans-unit id="sys_file_reference.description">
-				<source>Copytext</source>
-				<target>Beschreibung</target>
 			</trans-unit>
 
 			<trans-unit id="palette.cta">

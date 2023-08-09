@@ -36,5 +36,7 @@ defined('TYPO3') || die();
 
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['starterNessa_CtaFieldUpdateWizard']
             = \StarterTeam\StarterNessa\Updates\CtaFieldMigration::class;
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['starterNessa_ContentElementDownloadListUpdateWizard']
+            = \StarterTeam\StarterNessa\Updates\CeDownloadMigration::class;
     }
 })();

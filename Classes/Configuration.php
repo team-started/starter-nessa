@@ -67,11 +67,6 @@ class Configuration
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-card.svg',
             'previewTemplate' => 'TeaserBackground',
         ],
-        'nessa_download_list' => [
-            'typeIconClass' => 'starter-ctype-nessa_download_list',
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/actions/actions-database-export.svg',
-            'previewTemplate' => 'DownloadList',
-        ],
         'nessa_teaser_icon' => [
             'typeIconClass' => 'starter-ctype-nessa_teaser_icon',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-card.svg',
