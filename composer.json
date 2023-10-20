@@ -28,7 +28,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "4.2-dev"
+            "dev-main": "4.4-dev"
         },
         "typo3/cms": {
             "extension-key": "starter_nessa"
