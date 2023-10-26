@@ -28,8 +28,6 @@ TCEFORM {
 
     // disable EXT:starter fields
     tx_starter_nav_media.disabled = 1
-    tx_starter_background_fluid.disabled = 1
-    tx_starter_visibility.disabled = 1
 
     // disable EXT:starter_nessa fields
     nessa_social_element.disabled = 1
@@ -77,6 +75,8 @@ TCEFORM {
     tx_starter_bordercolor.disabled = 1
     tx_starter_celink.disabled = 1
     tx_starter_celink_text.disabled = 1
+    tx_starter_background_fluid.disabled = 1
+    tx_starter_visibility.disabled = 1
 
     tx_starter_ctalink {
       disabled = 1
