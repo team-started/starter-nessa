@@ -117,7 +117,7 @@ class CtaFieldMigration implements UpgradeWizardInterface
     protected function countOfFieldUpdates(string $fieldName = ''): int
     {
         $oldFieldExists = false;
-        $fieldName = empty($fieldName) ? $this->oldFieldNames[0] : $fieldName;
+        $fieldName = $fieldName === '' ? $this->oldFieldNames[0] : $fieldName;
 
         /**@var Column[] $tableColumns*/
         $tableColumns = GeneralUtility::makeInstance(ConnectionPool::class)
