@@ -19,29 +19,29 @@
     "require": {
         "php": "^7.4 || ^8.1",
         "typo3/cms-core": "^11.5",
-        "starterteam/starter": "^4.3"
+        "starterteam/starter": "^4.4"
     },
     "autoload": {
         "psr-4": {
             "StarterTeam\\StarterNessa\\": "Classes"
         }
     },
-	"config": {
-		"vendor-dir": ".Build/vendor",
-		"bin-dir": ".Build/bin",
-		"allow-plugins": {
-			"typo3/class-alias-loader": true,
-			"typo3/cms-composer-installers": true
-		}
-	},
-	"extra": {
-		"branch-alias": {
-			"dev-main": "4.4-dev"
-		},
-		"typo3/cms": {
-			"extension-key": "starter_nessa",
-			"app-dir": ".Build",
-			"web-dir": ".Build/public"
-		}
-	}
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin",
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "4.4-dev"
+        },
+        "typo3/cms": {
+            "extension-key": "starter_nessa",
+            "app-dir": ".Build",
+            "web-dir": ".Build/public"
+        }
+    }
 }
