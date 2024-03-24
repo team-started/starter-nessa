@@ -10,5 +10,3 @@ _make/
 ehthumbs.db
 Thumbs.db
 .svn
-.sass-cache
-node_modules

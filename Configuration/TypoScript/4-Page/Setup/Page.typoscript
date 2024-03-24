@@ -8,12 +8,12 @@ page {
   }
 
   includeJSFooter {
-    file_1 = EXT:starter_nessa/Resources/Public/JavaScript/app.min.js
-    file_2 = EXT:starter_nessa/Resources/Public/JavaScript/runtime.min.js
+    file_1 = EXT:starter_nessa/Resources/Public/Frontend/JavaScript/app.min.js
+    file_2 = EXT:starter_nessa/Resources/Public/Frontend/JavaScript/runtime.min.js
   }
 
   includeCSS {
-    file_1 = EXT:starter_nessa/Resources/Public/Css/app.min.css
+    file_1 = EXT:starter_nessa/Resources/Public/Frontend/Css/app.min.css
   }
 
   5 < lib.googleTagManagerBody
