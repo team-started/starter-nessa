@@ -1,12 +1,14 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (function () {
     $translationFile = 'LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:';
     $cType = 'nessa_team';
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         [
             'nessa_team_member_element' => [
@@ -28,7 +30,6 @@ defined('TYPO3') || die();
                         'levelLinksPosition' => 'bottom',
                         'useSortable' => true,
                         'showPossibleLocalizationRecords' => true,
-                        'showRemovedLocalizationRecords' => true,
                         'showAllLocalizationLink' => true,
                         'showSynchronizationLink' => true,
                         'enabledControls' => [
@@ -68,7 +69,7 @@ defined('TYPO3') || die();
         ],
     ];
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    ExtensionManagementUtility::addPlugin(
         [
             $translationFile . 'CType.I.' . $cType,
             $cType,

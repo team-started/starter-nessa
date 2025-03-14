@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterNessa\DataProcessing;
 
+use Override;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
@@ -16,13 +17,12 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  */
 class AssetsOfCategoriesProcessor implements DataProcessorInterface
 {
-    protected ResourceFactory $resourceFactory;
-
-    public function __construct(ResourceFactory $resourceFactory)
-    {
-        $this->resourceFactory = $resourceFactory;
+    public function __construct(
+        protected ResourceFactory $resourceFactory,
+    ) {
     }
 
+    #[Override]
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
@@ -111,9 +111,7 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
                     'sys_category_record_mm.tablenames',
                     $queryBuilder->quote('sys_file_metadata')
                 )
-            )
-            ->orderBy('sys_file.' . $sorting)
-            ->execute()
+            )->orderBy('sys_file.' . $sorting)->executeQuery()
             ->fetchAllAssociative();
     }
 }

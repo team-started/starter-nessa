@@ -1,5 +1,7 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (function () {
@@ -38,7 +40,7 @@ defined('TYPO3') || die();
         ],
     ];
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    ExtensionManagementUtility::addPlugin(
         [
             $translationFile . 'CType.I.' . $cType,
             $cType,

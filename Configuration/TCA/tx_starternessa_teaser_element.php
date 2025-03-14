@@ -1,5 +1,7 @@
 <?php
 
+use TYPO3\CMS\Core\Resource\File;
+
 defined('TYPO3') || die();
 
 return (function () {
@@ -24,7 +26,6 @@ return (function () {
             'sortby' => 'sorting',
             'tstamp' => 'tstamp',
             'crdate' => 'crdate',
-            'cruser_id' => 'cruser_id',
             'title' => $translationFile . 'teaser_element_label',
             'delete' => 'deleted',
             'versioningWS' => true,
@@ -43,6 +44,9 @@ return (function () {
             ],
             'typeicon_classes' => [
                 'default' => 'starter-table-tx_starternessa_teaser_element',
+            ],
+            'security' => [
+                'ignorePageTypeRestriction' => true,
             ],
         ],
 
@@ -86,7 +90,7 @@ return (function () {
                     'type' => 'check',
                     'items' => [
                         '1' => [
-                            '0' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
                         ],
                     ],
                 ],
@@ -95,9 +99,7 @@ return (function () {
                 'exclude' => true,
                 'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputDateTime',
-                    'eval' => 'datetime',
+                    'type' => 'datetime',
                     'default' => 0,
                 ],
                 'l10n_mode' => 'exclude',
@@ -107,9 +109,7 @@ return (function () {
                 'exclude' => true,
                 'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputDateTime',
-                    'eval' => 'datetime',
+                    'type' => 'datetime',
                     'default' => 0,
                     'range' => [
                         'upper' => mktime(0, 0, 0, 1, 1, 2038),
@@ -131,8 +131,8 @@ return (function () {
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            '',
-                            0,
+                            'label' => '',
+                            'value' => 0,
                         ],
                     ],
                     'foreign_table' => 'tx_starternessa_teaser_element',
@@ -152,28 +152,18 @@ return (function () {
                     'type' => 'input',
                     'size' => 50,
                     'max' => 255,
-                    'eval' => 'trim,required',
+                    'eval' => 'trim',
+                    'required' => true,
                 ],
             ],
             'link' => [
                 'exclude' => true,
                 'label' => $translationFile . 'tx_starternessa_teaser_element.link',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputLink',
+                    'type' => 'link',
                     'size' => 50,
-                    'max' => 1024,
-                    'eval' => 'trim',
-                    'fieldControl' => [
-                        'linkPopup' => [
-                            'options' => [
-                                'title' => $translationFile . 'tx_starternessa_teaser_element.link',
-                                'blindLinkOptions' => 'folder, spec',
-                                'blindLinkFields' => 'class, params, target',
-                            ],
-                        ],
-                    ],
-                    'softref' => 'typolink',
+                    'allowedTypes' => ['page', 'file', 'url', 'email', 'record', 'telephone'],
+                    'appearance' => ['allowedOptions' => ['title', 'rel']],
                 ],
             ],
             'link_text' => [
@@ -194,8 +184,8 @@ return (function () {
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
-                            '',
+                            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                            'value' => '',
                         ],
                     ],
                     'default' => '',
@@ -203,58 +193,57 @@ return (function () {
             ],
             'assets' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'assets',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                        ],
-                        'minitems' => 1,
-                        'maxitems' => 1,
-                        // custom configuration for displaying fields in the overlay/reference table
-                        // behaves the same as the image field.
-                        'overrideChildTca' => [
-                            'columns' => [
-                                'uid_local' => [
-                                    'config' => [
-                                        'appearance' => [
-                                            'elementBrowserAllowed' => 'jpg,jpeg,png',
-                                        ],
+                'config' => [
+                    //## !!! Watch out for fieldName different from columnName
+                    'type' => 'file',
+                    'allowed' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'],
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+                    ],
+                    'minitems' => 1,
+                    'maxitems' => 1,
+                    // custom configuration for displaying fields in the overlay/reference table
+                    // behaves the same as the image field.
+                    'overrideChildTca' => [
+                        'columns' => [
+                            'uid_local' => [
+                                'config' => [
+                                    'appearance' => [
+                                        'elementBrowserAllowed' => 'jpg,jpeg,png',
                                     ],
                                 ],
-                                'crop' => [
-                                    'config' => [
-                                        'cropVariants' => [
-                                            'default' => [
-                                                'title' => 'Default',
-                                                'selectedRatio' => '3:2',
-                                                'allowedAspectRatios' => [
-                                                    '3:2' => [
-                                                        'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.3_2',
-                                                        'value' => 3 / 2,
-                                                    ],
+                            ],
+                            'crop' => [
+                                'config' => [
+                                    'cropVariants' => [
+                                        'default' => [
+                                            'title' => 'Default',
+                                            'selectedRatio' => '3:2',
+                                            'allowedAspectRatios' => [
+                                                '3:2' => [
+                                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.3_2',
+                                                    'value' => 3 / 2,
                                                 ],
                                             ],
                                         ],
                                     ],
                                 ],
                             ],
-                            'types' => [
-                                '0' => [
-                                    'showitem' => '
+                        ],
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
                                         --palette--;;nessaTeaserBackgroundOverlayPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_IMAGE => [
+                                'showitem' => '
                                         --palette--;;nessaTeaserBackgroundOverlayPalette,
                                         --palette--;;filePalette',
-                                ],
                             ],
                         ],
                     ],
-                    $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext']
-                ),
+                ],
             ],
             'bodytext' => [
                 'l10n_mode' => 'prefixLangTitle',

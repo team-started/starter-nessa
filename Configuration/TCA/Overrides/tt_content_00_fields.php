@@ -1,11 +1,13 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (function () {
     $translationFile = 'LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:';
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         [
             'nessa_teaser_element' => [
@@ -27,7 +29,6 @@ defined('TYPO3') || die();
                         'levelLinksPosition' => 'bottom',
                         'useSortable' => true,
                         'showPossibleLocalizationRecords' => true,
-                        'showRemovedLocalizationRecords' => true,
                         'showAllLocalizationLink' => true,
                         'showSynchronizationLink' => true,
                         'enabledControls' => [

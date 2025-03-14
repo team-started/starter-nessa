@@ -1,12 +1,14 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (function () {
     $translationFile = 'LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:';
     $cType = 'nessa_footer';
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         [
             'nessa_copyright' => [
@@ -41,7 +43,7 @@ defined('TYPO3') || die();
         ',
     ];
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    ExtensionManagementUtility::addPlugin(
         [
             $translationFile . 'CType.I.' . $cType,
             $cType,

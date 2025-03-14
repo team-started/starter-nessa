@@ -1,0 +1,59 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+
+    <f:if condition="{data.bodytext}">
+        <div class="row">
+            <div class="col mb-4">
+                <f:format.html>{data.bodytext}</f:format.html>
+            </div>
+        </div>
+    </f:if>
+
+	<div class="row">
+
+		<f:for each="{downloadFiles}" as="downloadFile">
+			<div class="col-md-6 d-flex align-items-stretch c-download-list__item">
+				<a href="{downloadFile.publicUrl}"
+                   download
+                   class="c-download-list__link"
+                   type="{downloadFile.properties.mime_type}"
+                >
+					<div class="media">
+						<div class="c-download-list__media">
+							<i class="icofont-download mr-3"></i>
+						</div>
+
+						<div class="media-body">
+							<h3 class="c-download-list__headline mt-0">
+                                {f:if(condition: downloadFile.properties.title, then: downloadFile.properties.title, else: downloadFile.name) -> f:format.htmlspecialchars()}
+                            </h3>
+
+                            <f:if condition="{data.filelink_size} || {data.uploads_description}">
+                                <p class="c-download-list__description">
+                                    <f:if condition="{data.uploads_description}">
+                                        {downloadFile.properties.description}
+                                    </f:if>
+                                    <span class="c-download-list__meta">
+                                        <span class="c-download-list__type">{downloadFile.extension -> starterteam:format.upper()}</span>
+                                        <f:if condition="{data.filelink_size}">
+                                        (<span class="c-download-list__size">{downloadFile.properties.size -> f:format.bytes()}</span>)
+                                        </f:if>
+                                    </span>
+                                </p>
+                            </f:if>
+						</div>
+					</div>
+				</a>
+			</div>
+		</f:for>
+
+	</div>
+
+</f:section>
+
+</html>

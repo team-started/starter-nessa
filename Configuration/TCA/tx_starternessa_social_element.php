@@ -23,7 +23,6 @@ return (function () {
             'sortby' => 'sorting',
             'tstamp' => 'tstamp',
             'crdate' => 'crdate',
-            'cruser_id' => 'cruser_id',
             'title' => $translationFile . 'social_element_label',
             'delete' => 'deleted',
             'versioningWS' => true,
@@ -42,6 +41,9 @@ return (function () {
             ],
             'typeicon_classes' => [
                 'default' => 'starter-table-tx_starternessa_social_element',
+            ],
+            'security' => [
+                'ignorePageTypeRestriction' => true,
             ],
         ],
 
@@ -79,7 +81,7 @@ return (function () {
                     'type' => 'check',
                     'items' => [
                         '1' => [
-                            '0' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
                         ],
                     ],
                 ],
@@ -88,9 +90,7 @@ return (function () {
                 'exclude' => true,
                 'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputDateTime',
-                    'eval' => 'datetime',
+                    'type' => 'datetime',
                     'default' => 0,
                 ],
                 'l10n_mode' => 'exclude',
@@ -100,9 +100,7 @@ return (function () {
                 'exclude' => true,
                 'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputDateTime',
-                    'eval' => 'datetime',
+                    'type' => 'datetime',
                     'default' => 0,
                     'range' => [
                         'upper' => mktime(0, 0, 0, 1, 1, 2038),
@@ -124,8 +122,8 @@ return (function () {
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            '',
-                            0,
+                            'label' => '',
+                            'value' => 0,
                         ],
                     ],
                     'foreign_table' => 'tx_starternessa_social_element',
@@ -145,7 +143,8 @@ return (function () {
                     'type' => 'input',
                     'size' => 50,
                     'max' => 255,
-                    'eval' => 'trim,required',
+                    'eval' => 'trim',
+                    'required' => true,
                 ],
             ],
             'social_link' => [
@@ -153,21 +152,10 @@ return (function () {
                 'l10n_mode' => 'exclude',
                 'label' => $translationFile . 'tx_starternessa_social_element.social_link',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputLink',
+                    'type' => 'link',
                     'size' => 50,
-                    'max' => 1024,
-                    'eval' => 'trim',
-                    'fieldControl' => [
-                        'linkPopup' => [
-                            'options' => [
-                                'title' => $translationFile . 'tx_starternessa_social_element.link',
-                                'blindLinkOptions' => 'page, file, folder, telephone, spec, mail',
-                                'blindLinkFields' => 'class, params, target',
-                            ],
-                        ],
-                    ],
-                    'softref' => 'typolink',
+                    'allowedTypes' => ['url', 'record'],
+                    'appearance' => ['allowedOptions' => ['title', 'rel']],
                 ],
             ],
             'icon' => [
@@ -179,8 +167,8 @@ return (function () {
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
-                            '',
+                            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                            'value' => '',
                         ],
                     ],
                     'default' => '',

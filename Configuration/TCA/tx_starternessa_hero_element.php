@@ -1,5 +1,7 @@
 <?php
 
+use TYPO3\CMS\Core\Resource\File;
+
 defined('TYPO3') || die();
 
 return (function () {
@@ -25,7 +27,6 @@ return (function () {
             'sortby' => 'sorting',
             'tstamp' => 'tstamp',
             'crdate' => 'crdate',
-            'cruser_id' => 'cruser_id',
             'title' => $translationFile . 'hero_element_label',
             'delete' => 'deleted',
             'versioningWS' => true,
@@ -44,6 +45,9 @@ return (function () {
             ],
             'typeicon_classes' => [
                 'default' => 'starter-table-tx_starternessa_hero_element',
+            ],
+            'security' => [
+                'ignorePageTypeRestriction' => true,
             ],
         ],
 
@@ -84,7 +88,7 @@ return (function () {
                     'type' => 'check',
                     'items' => [
                         '1' => [
-                            '0' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
                         ],
                     ],
                 ],
@@ -93,9 +97,7 @@ return (function () {
                 'exclude' => true,
                 'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputDateTime',
-                    'eval' => 'datetime',
+                    'type' => 'datetime',
                     'default' => 0,
                 ],
                 'l10n_mode' => 'exclude',
@@ -105,9 +107,7 @@ return (function () {
                 'exclude' => true,
                 'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputDateTime',
-                    'eval' => 'datetime',
+                    'type' => 'datetime',
                     'default' => 0,
                     'range' => [
                         'upper' => mktime(0, 0, 0, 1, 1, 2038),
@@ -129,8 +129,8 @@ return (function () {
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            '',
-                            0,
+                            'label' => '',
+                            'value' => 0,
                         ],
                     ],
                     'foreign_table' => 'tx_starternessa_hero_element',
@@ -150,28 +150,18 @@ return (function () {
                     'type' => 'input',
                     'size' => 50,
                     'max' => 255,
-                    'eval' => 'trim,required',
+                    'eval' => 'trim',
+                    'required' => true,
                 ],
             ],
             'ctalink' => [
                 'exclude' => true,
                 'label' => $translationFile . 'tt_content.nessa_ctalink_formlabel',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputLink',
+                    'type' => 'link',
                     'size' => 50,
-                    'max' => 1024,
-                    'eval' => 'trim',
-                    'fieldControl' => [
-                        'linkPopup' => [
-                            'options' => [
-                                'title' => $translationFile . 'tt_content.nessa_ctalink_formlabel',
-                                'blindLinkOptions' => 'folder, spec, telephone, url',
-                                'blindLinkFields' => 'class, params, target',
-                            ],
-                        ],
-                    ],
-                    'softref' => 'typolink',
+                    'allowedTypes' => ['page', 'file', 'email', 'record'],
+                    'appearance' => ['allowedOptions' => ['title', 'rel']],
                 ],
             ],
             'ctalink_text' => [
@@ -186,47 +176,46 @@ return (function () {
             ],
             'assets' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'assets',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                        ],
-                        'minitems' => 1,
-                        'maxitems' => 1,
-                        // custom configuration for displaying fields in the overlay/reference table
-                        // behaves the same as the image field.
-                        'overrideChildTca' => [
-                            'columns' => [
-                                'uid_local' => [
-                                    'config' => [
-                                        'appearance' => [
-                                            'elementBrowserAllowed' => 'jpg,jpeg,png',
-                                        ],
+                'config' => [
+                    //## !!! Watch out for fieldName different from columnName
+                    'type' => 'file',
+                    'allowed' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'],
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+                    ],
+                    'minitems' => 1,
+                    'maxitems' => 1,
+                    // custom configuration for displaying fields in the overlay/reference table
+                    // behaves the same as the image field.
+                    'overrideChildTca' => [
+                        'columns' => [
+                            'uid_local' => [
+                                'config' => [
+                                    'appearance' => [
+                                        'elementBrowserAllowed' => 'jpg,jpeg,png',
                                     ],
                                 ],
                             ],
-                            'types' => [
-                                '0' => [
-                                    'showitem' => '
+                        ],
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
-                                --palette--;;imageoverlayPalette,
+                            ],
+                            File::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                --palette--;;nessaHeroImageOverlayPalette,
                                 --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_VIDEO => [
+                                'showitem' => '
                                 --palette--;;videoOverlayPalette,
                                 --palette--;;filePalette',
-                                ],
                             ],
                         ],
                     ],
-                    $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext']
-                ),
+                ],
             ],
             'bodytext' => [
                 'l10n_mode' => 'prefixLangTitle',

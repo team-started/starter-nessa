@@ -1,5 +1,8 @@
 <?php
 
+use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (function () {
@@ -45,7 +48,7 @@ defined('TYPO3') || die();
                             ],
                         ],
                         'types' => [
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            File::FILETYPE_IMAGE => [
                                 'showitem' => '
                                 --palette--;;nessaPartnerOverlayPalette,
                                 --palette--;;filePalette',
@@ -57,7 +60,7 @@ defined('TYPO3') || die();
         ],
     ];
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    ExtensionManagementUtility::addPlugin(
         [
             $translationFile . 'CType.I.' . $cType,
             $cType,
