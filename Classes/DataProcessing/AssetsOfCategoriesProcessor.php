@@ -12,16 +12,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
-/**
- * Class AssetsOfCategoriesProcessor
- */
-class AssetsOfCategoriesProcessor implements DataProcessorInterface
+final readonly class AssetsOfCategoriesProcessor implements DataProcessorInterface
 {
-    public function __construct(
-        protected ResourceFactory $resourceFactory,
-    ) {
-    }
-
     #[Override]
     public function process(
         ContentObjectRenderer $cObj,
@@ -49,7 +41,7 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
         $categoriesWithData = [];
         foreach ($fileRecords as $record) {
             $processedData[$targetVariableName][] = [
-                'file' => $this->resourceFactory->getFileObject($record['uid']),
+                'file' => GeneralUtility::makeInstance(ResourceFactory::class)->getFileObject($record['uid']),
                 'category' => [
                     'uid' => $record['categoryUid'],
                     'title' => $record['title'],
