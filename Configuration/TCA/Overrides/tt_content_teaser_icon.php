@@ -33,6 +33,7 @@ defined('TYPO3') || die();
                         'columns' => [
                             'assets' => [
                                 'config' => [
+                                    'allowed' => 'svg',
                                     'overrideChildTca' => [
                                         'columns' => [
                                             'uid_local' => [

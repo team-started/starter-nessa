@@ -37,6 +37,7 @@ defined('TYPO3') || die();
                 'label' => $translationFile . 'tt_content.' . $cType . '.partner',
                 'config' => [
                     'minitems' => 1,
+                    'allowed' => 'jpg,jpeg,png,svg',
                     'overrideChildTca' => [
                         'columns' => [
                             'uid_local' => [

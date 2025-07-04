@@ -204,7 +204,7 @@ return (function () {
                 'config' => [
                     //## !!! Watch out for fieldName different from columnName
                     'type' => 'file',
-                    'allowed' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'],
+                    'allowed' => 'jpg,jpeg,png',
                     'appearance' => [
                         'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
                     ],

@@ -26,9 +26,6 @@ TCEFORM {
     fe_login_mode.disabled = 1
     categories.disabled = 1
 
-    // disable EXT:starter fields
-    tx_starter_nav_media.disabled = 1
-
     // disable EXT:starter_nessa fields
     nessa_social_element.disabled = 1
   }
@@ -93,24 +90,6 @@ TCEFORM {
         nessa_cta.disabled = 0
         text.disabled = 0
         textmedia.disabled = 0
-      }
-    }
-
-    assets {
-      config {
-        appearance {
-          fileUploadAllowed = 0
-          fileByUrlAllowed = 0
-        }
-      }
-    }
-
-    media {
-      config {
-        appearance {
-          fileUploadAllowed = 0
-          fileByUrlAllowed = 0
-        }
       }
     }
 
@@ -192,6 +171,15 @@ TCEFORM {
         icofont-flora-flower = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:tx_starternessa_teaser_element.icon.I.agricultural-water
         icofont-bathtub = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:tx_starternessa_teaser_element.icon.I.consumption-water
         icofont-beverage = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:tx_starternessa_teaser_element.icon.I.drink-water
+      }
+    }
+
+    assets {
+      config {
+        appearance {
+          fileUploadAllowed = 0
+          fileByUrlAllowed = 0
+        }
       }
     }
   }
