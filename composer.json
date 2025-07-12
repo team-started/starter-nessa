@@ -21,11 +21,19 @@
 		"typo3/cms-core": "^12.4 || ^13.0",
 		"starterteam/starter": "^4.5 || dev-main"
     },
+	"require-dev": {
+		"typo3/testing-framework": "^8.2"
+	},
     "autoload": {
         "psr-4": {
             "StarterTeam\\StarterNessa\\": "Classes"
         }
     },
+	"autoload-dev": {
+		"psr-4": {
+			"StarterTeam\\StarterNessa\\Tests\\": "Tests"
+		}
+	},
     "config": {
         "vendor-dir": ".Build/vendor",
         "bin-dir": ".Build/bin",

@@ -4,76 +4,67 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterNessa\ViewHelpers\Format;
 
-use Closure;
+use InvalidArgumentException;
 use Override;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3\CMS\Core\Utility\StringUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderStatic;
 
 /**
- * Removes tags from the given string (applying PHPs :php:`strip_tags()` function)
- * See https://www.php.net/manual/function.strip-tags.php.
+ * ViewHelper to format a string in upper letter with PHP `strtoupper()` function.
+ * For more details have a look into PHP documentation on https://www.php.net/manual/function.strtoupper.php
  *
- * Examples
- * ========
- *
- * Default notation
- * ----------------
- *
- * ::
- *
- *    <starterteam:format.upper>Some Text</starterteam:format.upper>
- *
+ * # Example: Basic example
+ * <code>
+ * <starterteam:format.upper>Some Text</starterteam:format.upper>
+ * </code>
+ * <output>
  * SOME TEXT
+ * </output>
  *
- *
- * Inline notation
- * ---------------
- *
- * ::
- *
- *    {text -> starterteam:format.upper()}
- *
+ * # Example: Inline notation
+ * <code>
+ * {text -> starterteam:format.upper()}
+ * </code>
+ * <output>
  * SOME TEXT
+ * </output>
  */
 class UpperViewHelper extends AbstractViewHelper
 {
-    use CompileWithContentArgumentAndRenderStatic;
-
-    /**
-     * No output escaping as some tags may be allowed
-     */
     protected $escapeOutput = false;
 
-    /**
-     * To ensure all tags are removed, child node's output must not be escaped
-     */
     protected $escapeChildren = false;
 
-    /**
-     * Initialize ViewHelper arguments
-     *
-     * @throws Exception
-     */
     #[Override]
     public function initializeArguments(): void
     {
-        $this->registerArgument('value', 'string', 'string to format');
+        $this->registerArgument('value', 'string', 'String to format');
+    }
+
+    public function render(): string
+    {
+        $value = $this->renderChildren();
+        if (is_array($value)) {
+            throw new InvalidArgumentException('Specified array cannot be converted to string.', 1752329208);
+        }
+        if (is_object($value)) {
+            throw new InvalidArgumentException('Specified object cannot be converted to string.', 1752329228);
+        }
+
+        $value = StringUtility::cast($value);
+        if (is_null($value)) {
+            throw new InvalidArgumentException('Specified value cannot be converted to string.', 1752329547);
+        }
+
+        return strtoupper($value);
     }
 
     /**
-     * Applies strtoupper() on the specified value.
-     *
-     * @see https://www.php.net/manual/function.strtoupper.php
+     * Explicitly set argument name to be used as content.
      */
     #[Override]
-    public static function renderStatic(
-        array $arguments,
-        Closure $renderChildrenClosure,
-        RenderingContextInterface $renderingContext
-    ): string {
-        $value = $renderChildrenClosure();
-        return strtoupper((string)$value);
+    public function getContentArgumentName(): string
+    {
+        return 'value';
     }
 }
