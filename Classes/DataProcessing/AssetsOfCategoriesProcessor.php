@@ -8,7 +8,9 @@ use Override;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -23,20 +25,14 @@ final readonly class AssetsOfCategoriesProcessor implements DataProcessorInterfa
     ): array {
         // The variable to be used within the result
         $targetVariableName = $cObj->stdWrapValue('as', $processorConfiguration, 'portfolioAssets');
+        $sortBy = (string)$cObj->stdWrapValue('sorting', $processorConfiguration, 'name');
 
-        $categories = [];
-        if (!empty($processedData['portfolioCategories'])) {
-            foreach ($processedData['portfolioCategories'] as $category) {
-                $categories[] = $category['data']['uid'];
-            }
-        }
-
-        if ($categories === []) {
+        $categoriesIdentifiers = $this->getCategoriesIdsFromProcessedData($processedData);
+        if ($categoriesIdentifiers === []) {
             return $processedData;
         }
 
-        $sortBy = (string)$cObj->stdWrapValue('sorting', $processorConfiguration, 'name');
-        $fileRecords = $this->getRecords($categories, $sortBy);
+        $fileRecords = $this->getRecords($categoriesIdentifiers, $sortBy);
 
         $categoriesWithData = [];
         foreach ($fileRecords as $record) {
@@ -103,7 +99,27 @@ final readonly class AssetsOfCategoriesProcessor implements DataProcessorInterfa
                     'sys_category_record_mm.tablenames',
                     $queryBuilder->quote('sys_file_metadata')
                 )
-            )->orderBy('sys_file.' . $sorting)->executeQuery()
+            )
+            ->orderBy('sys_file.' . $sorting)
+            ->executeQuery()
             ->fetchAllAssociative();
+    }
+
+    protected function getCategoriesIdsFromProcessedData(array $processedData): array
+    {
+        $identifiers = [];
+        $processedPortfolioCategories = ArrayUtility::getValueByPath($processedData, 'portfolioCategories');
+
+        if (is_array($processedPortfolioCategories) && count($processedPortfolioCategories) > 0) {
+            foreach ($processedPortfolioCategories as $category) {
+                $identifiers[] = MathUtility::forceIntegerInRange(
+                    ArrayUtility::getValueByPath($category, 'data/uid'),
+                    0,
+                    PHP_INT_MAX
+                );
+            }
+        }
+
+        return $identifiers;
     }
 }
