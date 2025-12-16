@@ -91,10 +91,10 @@
 			<trans-unit id="tt_content.label.backgroundcolor.transparent">
 				<source>transparent</source>
 			</trans-unit>
-			<trans-unit id="tt_content.nessa_ctalink_formlabel">
+			<trans-unit id="tt_content.tx_starter_ctalink_formlabel">
 				<source>Link</source>
 			</trans-unit>
-			<trans-unit id="tt_content.nessa_ctalink_text_formlabel">
+			<trans-unit id="tt_content.tx_starter_ctalink_text_formlabel">
 				<source>Link text</source>
 			</trans-unit>
 			<trans-unit id="tt_content.frame_class.tx_starternessa_teaser_background.I.medium-2-cols">
@@ -180,6 +180,13 @@
 			</trans-unit>
 			<trans-unit id="tx_starternessa_social_element.icon.I.instragram">
 				<source>Instagram</source>
+			</trans-unit>
+
+			<trans-unit id="tx_starternessa_hero.tx_starter_ctalink_formlabel">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_starternessa_hero.tx_starter_ctalink_text_formlabel">
+				<source>Link text</source>
 			</trans-unit>
 
 			<trans-unit id="tt_content.nessa_copyright_formlabel">
