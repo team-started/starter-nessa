@@ -1,0 +1,151 @@
+[class^='icofont-'],
+[class*=' icofont-'] {
+    font-family: $custom-icon-font-family !important;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-transform: none;
+    white-space: nowrap;
+    speak: none;
+    direction: ltr;
+    word-wrap: normal;
+}
+
+.icofont-rounded-left {
+    &::before {
+        content: '\ea9d';
+    }
+}
+
+.icofont-rounded-down {
+    &::before {
+        content: '\ea99';
+    }
+}
+
+.icofont-rounded-right {
+    &::before {
+        content: '\eaa0';
+    }
+}
+
+.icofont-rounded-up {
+    &::before {
+        content: '\eaa1';
+    }
+}
+
+.icofont-water-drop {
+    &::before {
+        content: '\f027';
+    }
+}
+
+// Landwirtschaftswasser
+.icofont-flora-flower {
+    &::before {
+        content: '\e80c';
+    }
+}
+
+// Verbrauchswasser
+.icofont-bathtub {
+    &::before {
+        content: '\e801';
+    }
+}
+
+// Trinkwasser
+.icofont-beverage {
+    &::before {
+        content: '\eeb9';
+    }
+}
+
+.icofont-simple-left {
+    &::before {
+        content: '\eab5';
+    }
+}
+
+.icofont-simple-right {
+    &::before {
+        content: '\eab8';
+    }
+}
+
+.icofont-arrow-right {
+    &::before {
+        content: '\ea5d';
+    }
+}
+
+// mobile navigation icon
+.icofont-navigation-menu {
+    &::before {
+        content: '\efa2';
+    }
+}
+
+// close icon for mobile navigation
+.icofont-close {
+    &::before {
+        content: '\eee4';
+    }
+}
+
+// icon for up scrolling
+.icofont-simple-up {
+    &::before {
+        content: '\eab9';
+    }
+}
+
+.icofont-download {
+    &::before {
+        content: '\ef08';
+    }
+}
+
+.icofont-simple-down {
+    &::before {
+        content: '\eab2';
+    }
+}
+
+.icofont-world {
+    &::before {
+        content: '\f02c';
+    }
+}
+
+.icofont-envelope {
+    &::before {
+        content: '\ef14';
+    }
+}
+
+.icofont-facebook {
+    &::before {
+        content: '\ed37';
+    }
+}
+
+.icofont-instagram {
+    &::before {
+        content: '\ed46';
+    }
+}
+
+.icofont-link {
+    &::before {
+        content: '\ef71';
+    }
+}
+
+.icofont-plus {
+    &::before {
+        content: '\efc2';
+    }
+}

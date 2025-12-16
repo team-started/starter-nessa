@@ -1,0 +1,31 @@
+.ctype-nessa_partner {
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 40px;
+    }
+
+    &__item {
+        width: $partner-item-width;
+        padding: 30px;
+        margin: 5px;
+        text-align: center;
+        transition: all .6s ease;
+
+        @include media-breakpoint-up('md') {
+            width: $partner-item-width-md;
+        }
+    }
+
+    &__bordered {
+        border: $partner-border-width solid $partner-border-color;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        vertical-align: middle;
+        border-style: none;
+        transition: all .6s ease;
+    }
+}

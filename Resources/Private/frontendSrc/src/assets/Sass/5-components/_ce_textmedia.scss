@@ -1,0 +1,10 @@
+.ctype-textmedia {
+    .content {
+        h1,
+        h2,
+        h3 {
+            font-size: $font-size-base * 2.125;
+            font-weight: 400;
+        }
+    }
+}

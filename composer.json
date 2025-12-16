@@ -14,15 +14,48 @@
         }
     ],
     "support": {
-        "issues": "https://gitlab.com/starterteam/team/starter-nessa/-/issues"
+        "issues": "https://github.com/chriwo/starter-nessa/issues"
     },
     "require": {
 		"php": "^8.3",
-		"typo3/cms-core": "^12.4 || ^13.0",
-		"starterteam/starter": "^4.5 || dev-main"
+		"typo3/cms-core": "^12.4 || ^13.4"
     },
 	"require-dev": {
-		"typo3/testing-framework": "^8.2"
+		"helhum/dotenv-connector": "^3.1",
+		"phpstan/extension-installer": "^1.4",
+		"phpstan/phpstan": "^2.1",
+		"saschaegerer/phpstan-typo3": "^2.1",
+		"typo3/coding-standards": "^0.8.0",
+		"typo3/testing-framework": "^8.2",
+		"typo3/cms-adminpanel": "^12.4 || ^13.4",
+		"typo3/cms-backend": "^12.4 || ^13.4",
+		"typo3/cms-belog": "^12.4 || ^13.4",
+		"typo3/cms-beuser": "^12.4 || ^13.4",
+		"typo3/cms-dashboard": "^12.4 || ^13.4",
+		"typo3/cms-extbase": "^12.4 || ^13.4",
+		"typo3/cms-extensionmanager": "^12.4 || ^13.4",
+		"typo3/cms-felogin": "^12.4 || ^13.4",
+		"typo3/cms-filelist": "^12.4 || ^13.4",
+		"typo3/cms-fluid": "^12.4 || ^13.4",
+		"typo3/cms-fluid-styled-content": "^12.4 || ^13.4",
+		"typo3/cms-frontend": "^12.4 || ^13.4",
+		"typo3/cms-impexp": "^13.4",
+		"typo3/cms-info": "^12.4 || ^13.4",
+		"typo3/cms-lowlevel": "^12.4 || ^13.4",
+		"typo3/cms-recordlist": "^12.4 || ^13.4",
+		"typo3/cms-recycler": "^13.4",
+		"typo3/cms-rte-ckeditor": "^12.4 || ^13.4",
+		"typo3/cms-scheduler": "^12.4 || ^13.4",
+		"typo3/cms-seo": "^12.4 || ^13.4",
+		"typo3/cms-setup": "^12.4 || ^13.4",
+		"typo3/cms-t3editor": "^12.4 || ^13.4",
+		"typo3/cms-tstemplate": "^12.4 || ^13.4",
+        "helhum/typo3-console": "^8.3",
+        "helmich/typo3-typoscript-lint": "^3.3",
+        "michielroos/typo3scan": "^1.7",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "ssch/typo3-rector": "^3.9",
+        "a9f/typo3-fractor": "^0.5.8"
 	},
     "autoload": {
         "psr-4": {
@@ -39,16 +72,15 @@
         "bin-dir": ".Build/bin",
         "allow-plugins": {
             "typo3/class-alias-loader": true,
-            "typo3/cms-composer-installers": true
+            "typo3/cms-composer-installers": true,
+            "helhum/dotenv-connector": true,
+            "phpstan/extension-installer": true,
+            "a9f/fractor-extension-installer": true
         }
     },
     "extra": {
-        "branch-alias": {
-            "dev-main": "4.5-dev"
-        },
         "typo3/cms": {
             "extension-key": "starter_nessa",
-            "app-dir": ".Build",
             "web-dir": ".Build/public"
         }
     }
