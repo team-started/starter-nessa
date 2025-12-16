@@ -1,0 +1,23 @@
+.ctype-nessa_cta {
+    padding: 80px 0;
+    background: map-get($theme-colors, 'secondary');
+
+    h3 {
+        color: $white;
+        font-weight: $font-weight-bold;
+    }
+
+    p {
+        color: $white;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .ctype-nessa_cta {
+        .cta-btn-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+.ctype-nessa_portfolio {
+    .portfolio-filters {
+        padding: 0;
+        margin: 25px auto;
+        text-align: center;
+        list-style: none;
+        border-radius: 50px;
+
+        button {
+            padding: 10px 15px;
+            border: 0;
+            background: none;
+            color: $custom-navlink-color;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+
+            &:focus {
+                color: $custom-navlink-color-focus;
+                outline: none;
+            }
+
+            &:hover {
+                color: $custom-navlink-color-hover;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        button.filter-active {
+            color: map-get($theme-colors, 'primary');
+        }
+    }
+
+    .portfolio-item {
+        margin-bottom: 30px;
+
+        .portfolio-info {
+            position: absolute;
+            z-index: 3;
+            right: 30px;
+            bottom: 0;
+            left: 30px;
+            padding: 15px;
+            background: map-get($grays, '200');
+            opacity: 0;
+            transition: all ease-in-out .3s;
+
+            h4 {
+                color: $headings-color;
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            p {
+                margin-bottom: 0;
+                color: $body-color;
+                font-size: 14px;
+            }
+
+            .preview-link {
+                position: absolute;
+                top: calc(50% - 18px);
+                right: 40px;
+                color: $custom-navlink-color;
+                font-size: 24px;
+                transition: .3s;
+
+                &:hover {
+                    color: $custom-navlink-color-hover;
+                }
+            }
+
+            .details-link {
+                position: absolute;
+                top: calc(50% - 18px);
+                right: 10px;
+                color: $custom-navlink-color;
+                font-size: 24px;
+                transition: .3s;
+
+                &:hover {
+                    color: $custom-navlink-color-hover;
+                }
+            }
+        }
+
+        &:hover {
+            .portfolio-info {
+                bottom: 20px;
+                opacity: 1;
+            }
+        }
+    }
+}

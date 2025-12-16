@@ -1,0 +1,8 @@
+#!/bin/bash
+
+.Build/bin/php-cs-fixer fix -v --dry-run --diff
+.Build/bin/phpstan
+.Build/bin/rector --clear-cache --dry-run
+
+.Build/bin/fractor process --dry-run
+#.Build/bin/typoscript-lint --fail-on-warnings ./

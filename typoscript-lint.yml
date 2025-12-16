@@ -1,0 +1,24 @@
+paths:
+  - Configuration/TypoScript
+  - Configuration/TSConfig
+
+filePatterns:
+  - "*.typoscript"
+  - "*.tsconfig"
+  - "setup.txt"
+
+excludePatterns:
+  - "TceForm.typoscript"
+
+sniffs:
+  - class: Indentation
+    parameters:
+      indentPerLevel: 2
+      indentConditions: true
+  - class: RepeatingRValue
+    parameters:
+      allowedRightValues:
+        - "TYPO3\\CMS\\Frontend\\DataProcessing\\DatabaseQueryProcessor"
+        - "TYPO3\\CMS\\Frontend\\DataProcessing\\FilesProcessor"
+        - "TYPO3\\CMS\\Frontend\\DataProcessing\\GalleryProcessor"
+        - "TYPO3\\CMS\\Frontend\\DataProcessing\\MenuProcessor"

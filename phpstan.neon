@@ -1,0 +1,17 @@
+includes:
+  - phpstan-baseline.neon
+parameters:
+    level: max
+    reportUnmatchedIgnoredErrors: true
+    paths:
+       - ./
+    excludePaths:
+        - .Build
+        - .ddev
+        - .project
+        - config
+        - Resources/Private/frontendSrc
+        - var
+    ignoreErrors:
+        -
+            identifier: missingType.iterableValue

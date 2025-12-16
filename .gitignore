@@ -10,3 +10,11 @@ _make/
 ehthumbs.db
 Thumbs.db
 .svn
+
+/.Build
+/Resources/Private/frontendSrc/node_modules/
+.sass-cache
+composer.lock
+var
+.php-cs-fixer.cache
+/config
