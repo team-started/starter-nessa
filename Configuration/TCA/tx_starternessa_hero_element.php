@@ -156,7 +156,7 @@ return (function () {
             ],
             'ctalink' => [
                 'exclude' => true,
-                'label' => $translationFile . 'tt_content.nessa_ctalink_formlabel',
+                'label' => $translationFile . 'tx_starternessa_hero.tx_starter_ctalink_formlabel',
                 'config' => [
                     'type' => 'link',
                     'size' => 50,
@@ -167,7 +167,7 @@ return (function () {
             'ctalink_text' => [
                 'l10n_mode' => 'prefixLangTitle',
                 'exclude' => true,
-                'label' => $translationFile . 'tt_content.nessa_ctalink_text_formlabel',
+                'label' => $translationFile . 'tx_starternessa_hero.tx_starter_ctalink_text_formlabel',
                 'config' => [
                     'type' => 'input',
                     'size' => 40,
