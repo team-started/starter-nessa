@@ -201,6 +201,18 @@
 			<trans-unit id="tt_content.nessa_copyright_formlabel">
 				<source>Copyright</source>
 			</trans-unit>
+			<trans-unit id="tt_content.header_layout.I.1">
+				<source>Level 1</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.I.2">
+				<source>Level 2</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.I.3">
+				<source>Level 3</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.I.100">
+				<source>Hide in frontend</source>
+			</trans-unit>
 
 			<trans-unit id="ckeditor.link.download">
 				<source>Download</source>

@@ -8,7 +8,7 @@ tt_content.nessa_portfolio {
     5 {
       table = sys_category
       uidInList.data = field:selected_categories
-      pidInList = 10
+      pidInList.data = site:rootPageId
       as = portfolioCategories
     }
 

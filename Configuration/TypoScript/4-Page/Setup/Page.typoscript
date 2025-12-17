@@ -1,9 +1,9 @@
+page = PAGE
 page {
+  typeNum = 0
+
   headerData {
     20 =< lib.starterTouchIcon
-
-    # remove use of GoogleAnalytics
-    50 >
     50 < lib.googleTagManagerHead
   }
 
@@ -16,10 +16,87 @@ page {
     file_1 = EXT:starter_nessa/Resources/Public/Frontend/Css/app.min.css
   }
 
+  meta {
+    viewport = {$starter.meta.viewport}
+    copyright = {$starter.branch.title}
+
+    keywords {
+      data = DB:pages:{$starter.pid.defaultMetaPageUid}:keywords
+      override {
+        field = keywords
+      }
+    }
+
+    description {
+      data = DB:pages:{$starter.pid.defaultMetaPageUid}:description
+      override {
+        field = description
+      }
+    }
+
+    abstract {
+      data = DB:pages:{$starter.pid.defaultMetaPageUid}:abstract
+      override {
+        field = abstract
+      }
+    }
+
+    author {
+      data = DB:pages:{$starter.pid.defaultMetaPageUid}:author
+      override {
+        field = author
+      }
+    }
+
+    google-site-verification = {$starter.tracking.google.siteVerification}
+  }
+
   5 < lib.googleTagManagerBody
 
-  10.dataProcessing {
-    20 < lib.menuLibrary.menuMain
-    30 < lib.menuLibrary.menuBreadcrumb
+  10 = FLUIDTEMPLATE
+  10 {
+    # Template names will be generated automatically by converting the applied
+    # backend_layout, there is no explicit mapping necessary anymore.
+    templateName = TEXT
+    templateName {
+      cObject = TEXT
+      cObject {
+        data = pagelayout
+        required = 1
+        case = uppercamelcase
+        split {
+          token = pagets__
+          cObjNum = 1
+          1.current = 1
+        }
+      }
+      ifEmpty = DefaultLayout
+    }
+
+    layoutRootPaths {
+      0 = EXT:starter_nessa/Resources/Private/Frontend/Layouts/
+    }
+
+    partialRootPaths {
+      0 = EXT:starter_nessa/Resources/Private/Frontend/Partials/
+    }
+
+    templateRootPaths {
+      0 = EXT:starter_nessa/Resources/Private/Frontend/Templates/
+    }
+
+    settings {
+      logoFile = {$starter.branch.images.logo}
+    }
+
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
+      10 {
+        as = site
+      }
+
+      20 < lib.menuLibrary.menuMain
+      30 < lib.menuLibrary.menuBreadcrumb
+    }
   }
 }
