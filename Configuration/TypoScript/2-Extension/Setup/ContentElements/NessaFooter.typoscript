@@ -6,7 +6,7 @@ tt_content.nessa_footer {
     10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     10 {
       table = tx_starternessa_social_element
-      pidInList = {$starter.pid.defaultHomePageUid}
+      pidInList.data = site:rootPageId
       orderBy = sorting
       as = socialMediaItems
     }
@@ -19,6 +19,14 @@ tt_content.nessa_footer {
       titleField = nav_title // title
       expandAll = 1
       levels = 7
+    }
+  }
+
+  settings {
+    creator {
+      name = {$starter.branch.creator.name}
+      link = {$starter.branch.creator.link}
+      linkTitle = {$starter.branch.creator.linkTitle}
     }
   }
 }

@@ -6,6 +6,12 @@ starter {
       favicon = EXT:starter_nessa/Resources/Public/Frontend/Images/favicon.svg
       touch-icon = EXT:starter_nessa/Resources/Public/Frontend/Images/touch-icon.svg
     }
+
+    creator {
+      name =
+      link =
+      linkTitle =
+    }
   }
 
   tracking {

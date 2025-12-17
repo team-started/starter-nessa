@@ -42,10 +42,12 @@
 
 	<div class="row d-flex align-items-center">
 		<div class="col text-center o-site-footer__credits">
-			Created by
-			<a href="https://www.visual-fx.ch/" target="_blank" title="Website Visual-FX">
-				Visual-FX
-			</a>
+            <f:if condition="{settings.creator.name} && {settings.creator.link}">
+                Created by
+                <a href="{settings.creator.link}" target="_blank" title="{settings.creator.linkTitle}">
+                    {settings.creator.name}
+                </a>
+            </f:if>
 		</div>
 	</div>
 
