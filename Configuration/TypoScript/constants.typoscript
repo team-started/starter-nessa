@@ -7,6 +7,32 @@ starter {
       touch-icon = EXT:starter_nessa/Resources/Public/Frontend/Images/touch-icon.svg
     }
   }
+
+  tracking {
+    google {
+      tagManagerID =
+      siteVerification =
+    }
+  }
+
+  meta {
+    # cat=starter: seo/meta/500; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.meta.viewport
+    viewport = width=device-width, initial-scale=1, minimum-scale=1
+
+    # cat=starter: seo/meta/505; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.meta.google
+    google = notranslate
+  }
+
+  pid {
+    # cat=starter: advanced/meta/700; type=int+; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.pid.defaultMetaPageUid
+    defaultMetaPageUid = 1
+
+    # cat=starter: advanced/meta/702; type=int+; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.pid.xmlSitemapRootUid
+    xmlSitemapRootUid = 1
+
+    # cat=starter: advanced/meta/703; type=int+; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.pid.footerMenuPageUid
+    footerMenuPageUid =
+  }
 }
 
 @import 'EXT:starter_nessa/Configuration/TypoScript/1-System/Constants/'

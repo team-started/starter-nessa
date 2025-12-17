@@ -1,0 +1,25 @@
+lib.menuLibrary {
+
+  // Standard MenuMain (mit Dropdown für die 2. Ebene)
+  menuMain = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+  menuMain {
+    as = menuMain
+    levels = 2
+    expandAll = 1
+  }
+
+  menuLanguage = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+  menuLanguage {
+    languages = auto
+    as = menuLanguage
+  }
+
+  // Breadcumb
+  menuBreadcrumb = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+  menuBreadcrumb {
+    as = menuBreadcrumb
+    special = rootline
+    special.range = 0|-1
+    includeNotInMenu = 1
+  }
+}

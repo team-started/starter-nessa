@@ -1,0 +1,50 @@
+##
+# get content from the tt_content table
+# fluid usage: <f:cObject typoscriptObjectPath="lib.starterDynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" />
+##
+lib.starterDynamicContent = COA
+lib.starterDynamicContent {
+  5 = LOAD_REGISTER
+  5 {
+    colPos.cObject = TEXT
+    colPos.cObject {
+      field = colPos
+      ifEmpty.cObject = TEXT
+      ifEmpty.cObject {
+        value.current = 1
+        ifEmpty = 0
+      }
+    }
+
+    pageUid.cObject = TEXT
+    pageUid.cObject {
+      field = pageUid
+      ifEmpty.data = TSFE:id
+    }
+  }
+
+  20 = CONTENT
+  20 {
+    table = tt_content
+    select {
+      includeRecordsWithoutDefaultTranslation = 1
+      orderBy = sorting
+      where = {#colPos}={register:colPos}
+      where.insertData = 1
+      pidInList.data = register:pageUid
+    }
+  }
+
+  90 = RESTORE_REGISTER
+}
+
+##
+# get content from the tt_content table with slide to parent page
+# fluid usage: <f:cObject typoscriptObjectPath="lib.starterDynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '0'}" />
+##
+lib.starterDynamicContentSlide =< lib.starterDynamicContent
+lib.starterDynamicContentSlide {
+  20 {
+    slide = -1
+  }
+}

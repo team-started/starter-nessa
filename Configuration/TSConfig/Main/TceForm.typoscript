@@ -57,25 +57,27 @@ TCEFORM {
     space_after_class.disabled = 1
     categories.disabled = 1
     fe_group.disabled = 1
+    uploads_type.disabled = 1
     imagecols.disabled = 1
     image_zoom.disabled = 1
+    imagewidth.disabled = 1
+    imageheight.disabled = 1
+    imageborder.disabled = 1
+    sectionIndex.disabled = 1
+    linkToTop.disabled = 1
+    frame_class {
+      disabled = 1
+      removeItems = default,ruler-before,ruler-after,indent,indent-left,indent-right,none
+    }
 
-    // disable EXT:starter fields
-    tx_starter_overline.disabled = 1
-    tx_starter_headerfontsize.disabled = 1
-    tx_starter_headercolor.disabled = 1
-    tx_starter_headerclass.disabled = 1
-    tx_starter_textclass.disabled = 1
-    tx_starter_textcolor.disabled = 1
-    tx_starter_width.disabled = 1
-    tx_starter_backgroundcolor.disabled = 1
-    tx_starter_bordercolor.disabled = 1
-    tx_starter_celink.disabled = 1
-    tx_starter_celink_text.disabled = 1
-    tx_starter_background_fluid.disabled = 1
-    tx_starter_visibility.disabled = 1
+    layout {
+      removeItems = 0,1,2,3
+    }
 
-    uploads_type.disabled = 1
+    // allow image position only left or right
+    imageorient {
+      removeItems = 0,1,2,8,9,10,17,18
+    }
 
     target {
       types {
@@ -113,14 +115,16 @@ TCEFORM {
     header_layout {
       removeItems = 4,5,6,99
 
+      altLabels {
+        1 = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.1
+        2 = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.2
+        3 = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.3
+        100 = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.100
+      }
+
       types {
         nessa_cta.disabled = 1
       }
-    }
-
-    // allow image position only left or right
-    imageorient {
-      removeItems = 0,1,2,8,9,10,17,18
     }
 
     subheader {
@@ -130,8 +134,6 @@ TCEFORM {
     }
 
     frame_class {
-
-
       types {
         nessa_teaser_background {
           disabled = 0
@@ -155,7 +157,6 @@ TCEFORM {
   }
 
   sys_file_reference {
-    tx_starter_class.disabled = 1
     description.disabled = 0
   }
 

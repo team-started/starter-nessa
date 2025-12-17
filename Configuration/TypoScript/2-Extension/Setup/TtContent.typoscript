@@ -1,25 +1,13 @@
 lib.contentElement {
   templateRootPaths {
-    # override content element rendering of EXT:starter
     10 = EXT:starter_nessa/Resources/Private/Extension/FluidStyledContent/Templates/
-
-    # remove EXT:starter template path
-    15 >
   }
 
   partialRootPaths {
-    # override content element rendering of EXT:starter
     10 = EXT:starter_nessa/Resources/Private/Extension/FluidStyledContent/Partials/
-
-    # remove EXT:starter template path
-    15 >
   }
 
   layoutRootPaths {
-    # override content element rendering of EXT:starter
     10 = EXT:starter_nessa/Resources/Private/Extension/FluidStyledContent/Layouts/
-
-    # remove EXT:starter template path
-    15 >
   }
 }
