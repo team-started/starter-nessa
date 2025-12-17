@@ -82,6 +82,12 @@
 			<trans-unit id="CType.I.nessa_partner.description">
 				<source>Element for the output of company logos</source>
 			</trans-unit>
+			<trans-unit id="CType.I.starter_m27_download">
+				<source>M27 - Download list</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_m27_download.description">
+				<source>Element to offer different downloads</source>
+			</trans-unit>
 
 			<trans-unit id="sys_file_metadata.nessa_portfolio_link">
 				<source>Portfolio Link</source>
@@ -162,6 +168,9 @@
 			<trans-unit id="tab.team_members">
 				<source>Team</source>
 			</trans-unit>
+			<trans-unit id="tab.download">
+				<source>Download files</source>
+			</trans-unit>
 
 			<trans-unit id="social_element_formlabel">
 				<source>SocialMedia Items</source>
@@ -191,6 +200,10 @@
 
 			<trans-unit id="tt_content.nessa_copyright_formlabel">
 				<source>Copyright</source>
+			</trans-unit>
+
+			<trans-unit id="ckeditor.link.download">
+				<source>Download</source>
 			</trans-unit>
 		</body>
     </file>

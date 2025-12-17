@@ -1,0 +1,19 @@
+tt_content.starter_m27_download =< lib.contentElement
+tt_content.starter_m27_download {
+  templateName = StarterM27Download
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      references.fieldName = media
+      collections.field = file_collections
+
+      sorting {
+        field = filelink_sorting
+        direction.field = filelink_sorting_direction
+      }
+
+      as = downloadFiles
+    }
+  }
+}

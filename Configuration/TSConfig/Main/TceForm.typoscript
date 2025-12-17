@@ -75,6 +75,22 @@ TCEFORM {
     tx_starter_background_fluid.disabled = 1
     tx_starter_visibility.disabled = 1
 
+    uploads_type.disabled = 1
+
+    target {
+      types {
+        starter_m27_download.disabled = 1
+      }
+    }
+
+    filelink_sorting {
+      types {
+        starter_m27_download {
+          removeItems = creation_date,modification_date,title,extension
+        }
+      }
+    }
+
     tx_starter_ctalink {
       disabled = 1
       types {

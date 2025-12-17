@@ -36,6 +36,15 @@ mod.wizards.newContentElement.wizardItems {
           CType = nessa_teaser_background
         }
       }
+
+      starter_m27_download {
+        iconIdentifier = starter-ctype-starter_m27_download
+        title = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.starter_m27_download
+        description = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:CType.I.starter_m27_download.description
+        tt_content_defValues {
+          CType = starter_m27_download
+        }
+      }
     }
 
     show := addToList(text)
@@ -44,7 +53,7 @@ mod.wizards.newContentElement.wizardItems {
     show := addToList(nessa_teaser)
     show := addToList(nessa_teaser_icon)
     show := addToList(nessa_teaser_background)
-    show := addToList(starter_download)
+    show := addToList(starter_m27_download)
   }
 
   special {
