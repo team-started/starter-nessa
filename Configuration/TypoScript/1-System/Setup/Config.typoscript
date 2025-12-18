@@ -1,0 +1,19 @@
+config {
+  disablePrefixComment = 1
+
+  intTarget = _self
+  fileTarget = _blank
+
+  pageTitleFirst = 1
+  pageTitleSeparator = |
+  pageTitleSeparator.noTrimWrap = | | |
+
+  moveJsFromHeaderToFooter = 1
+  removeDefaultCss = 1
+
+  sendCacheHeaders = 1
+
+  spamProtectEmailAddresses = -2
+  spamProtectEmailAddresses_atSubst = (at)
+  spamProtectEmailAddresses_lastDotSubst = (dot)
+}
