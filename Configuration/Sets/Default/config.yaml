@@ -1,0 +1,11 @@
+name: starterteam/nessa-default
+label: 'Default Nessa site set'
+
+dependencies:
+  - starterteam/backend-layouts
+  - starterteam/rte
+  - starterteam/content-elements
+  - starterteam/google-tag-manager
+
+optionalDependencies:
+  - typo3/seo-sitemap
