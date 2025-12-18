@@ -213,9 +213,9 @@ TCEFORM {
 
 # Allow fields only on website roots
 [page["is_siteroot"] == 1]
-  TCEFORM {
-    pages {
-      nessa_social_element.disabled = 0
-    }
+TCEFORM {
+  pages {
+    nessa_social_element.disabled = 0
   }
-[GLOBAL]
+}
+[end]
