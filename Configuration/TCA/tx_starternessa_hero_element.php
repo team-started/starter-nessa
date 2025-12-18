@@ -1,6 +1,6 @@
 <?php
 
-use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Resource\FileType;
 
 defined('TYPO3') || die();
 
@@ -203,12 +203,12 @@ return (function () {
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette',
                             ],
-                            File::FILETYPE_IMAGE => [
+                            FileType::IMAGE->value => [
                                 'showitem' => '
                                 --palette--;;nessaHeroImageOverlayPalette,
                                 --palette--;;filePalette',
                             ],
-                            File::FILETYPE_VIDEO => [
+                            FileType::VIDEO->value => [
                                 'showitem' => '
                                 --palette--;;videoOverlayPalette,
                                 --palette--;;filePalette',

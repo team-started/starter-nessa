@@ -1,6 +1,6 @@
 <?php
 
-use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Resource\FileType;
 
 defined('TYPO3') || die();
 
@@ -243,7 +243,7 @@ return (function () {
                                         --palette--;;nessaMemberOverlayPalette,
                                         --palette--;;filePalette',
                             ],
-                            File::FILETYPE_IMAGE => [
+                            FileType::IMAGE->value => [
                                 'showitem' => '
                                         --palette--;;nessaMemberOverlayPalette,
                                         --palette--;;filePalette',

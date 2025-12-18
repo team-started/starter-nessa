@@ -1,6 +1,6 @@
 <?php
 
-use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -49,7 +49,7 @@ defined('TYPO3') || die();
                             ],
                         ],
                         'types' => [
-                            File::FILETYPE_IMAGE => [
+                            FileType::IMAGE->value => [
                                 'showitem' => '
                                 --palette--;;nessaPartnerOverlayPalette,
                                 --palette--;;filePalette',
