@@ -12,6 +12,6 @@ defined('TYPO3') || die();
 
     // Add default UserTSConfig
     ExtensionManagementUtility::addUserTSConfig(
-        "@import 'EXT:starter_nessa/Configuration/TSConfig/User/Default.typoscript'"
+        "@import 'EXT:starter_nessa/Configuration/TSConfig/User/Default.tsconfig'"
     );
 })();
