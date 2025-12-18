@@ -1,0 +1,2 @@
+@import './PageTsConfig/ModWizard.tsconfig'
+@import './PageTsConfig/TceMain.tsconfig'

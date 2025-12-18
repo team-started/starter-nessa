@@ -1,0 +1,14 @@
+categories:
+  ThemeNessa:
+    label: 'Theme Nessa'
+  ThemeNessa.google-tag-manager:
+    label: 'Google Tag Manager'
+    parent: ThemeNessa
+
+settings:
+  starter.tracking.google.tagManagerID:
+    label: 'ID of Google Tag Manager'
+    description: 'Google Tag Manager ID'
+    category: ThemeNessa.google-tag-manager
+    type: string
+    default: ''

@@ -1,0 +1,5 @@
+name: starterteam/content-elements
+label: 'Theme Nessa: Content Elements'
+
+dependencies:
+  - typo3/fluid-styled-content

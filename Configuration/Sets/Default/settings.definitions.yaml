@@ -1,0 +1,103 @@
+categories:
+  ThemeNessa:
+    label: 'Theme Nessa'
+  ThemeNessa.templates.page:
+    label: 'Pages templates'
+    parent: ThemeNessa
+
+settings:
+  starter.branch.title:
+    label: 'Project or customer name'
+    description: ''
+    type: string
+    default: 'Starter Theme Nessa'
+
+  starter.branch.images.logo:
+    label: 'Project or customer logo'
+    description:
+    type: string
+    default: 'EXT:starter_nessa/Resources/Public/Frontend/Images/Logo.svg'
+
+  starter.branch.images.favicon:
+    label: 'Browser favicon of project or customer'
+    description:
+    type: string
+    default: 'EXT:starter_nessa/Resources/Public/Frontend/Images/favicon.svg'
+
+  starter.branch.images.touch-icon:
+    label: 'Touch icon of project or customer'
+    description:
+    type: string
+    default: 'EXT:starter_nessa/Resources/Public/Frontend/Images/touch-icon.svg'
+
+  starter.branch.creator.name:
+    label: 'Name person or company who created the project'
+    description:
+    type: string
+    default: ''
+
+  starter.branch.creator.link:
+    label: 'Website link of person or company who created the project'
+    description:
+    type: string
+    default: ''
+
+  starter.branch.creator.linkTitle:
+    label: 'Link title of person or company who created the project'
+    description:
+    type: string
+    default: ''
+
+  starter.fluidtemplate.layoutRootPath:
+    label: 'Layout Root Path'
+    category: ThemeNessa.templates.page
+    type: string
+    default: 'EXT:starter_nessa/Resources/Private/Frontend/Layouts/'
+
+  starter.fluidtemplate.partialRootPath:
+    label: 'Partial Root Path'
+    category: ThemeNessa.templates.page
+    type: string
+    default: 'EXT:starter_nessa/Resources/Private/Frontend/Partials/'
+
+  starter.fluidtemplate.templateRootPath:
+    label: 'Template Root Path'
+    category: ThemeNessa.templates.page
+    type: string
+    default: 'EXT:starter_nessa/Resources/Private/Frontend/Templates/'
+
+  starter.tracking.google.siteVerification:
+    label: 'Site verification value'
+    description:
+    type: string
+    default: ''
+
+  starter.meta.viewport:
+    label: 'ViewPort Setting for Responsive Websites'
+    description: ''
+    type: string
+    default: 'width=device-width, initial-scale=1, minimum-scale=1'
+
+  starter.meta.google:
+    label: 'Google Chrome translate option'
+    description: 'Use Google Chrome translation. If this value is set to "translate," the Google Chrome browser automatically provides a translation of the page.'
+    type: string
+    default: 'notranslate'
+
+  starter.pid.defaultMetaPageUid:
+    label: 'UID which by default contains the metadata'
+    description: ''
+    type: int
+    default: 1
+
+  starter.pid.xmlSitemapRootUid:
+    label: 'UID of root page for sitemap generation'
+    description: ''
+    type: int
+    default: 1
+
+  starter.pid.footerMenuPageUid:
+    label: 'UID of sys-folder for Footer-Menu'
+    description: ''
+    type: int
+    default: 0

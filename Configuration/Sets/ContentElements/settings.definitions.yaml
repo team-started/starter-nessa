@@ -1,0 +1,25 @@
+categories:
+  ThemeNessa:
+    label: 'Theme Nessa'
+  ThemeNessa.templates.content:
+    label: 'Content elements templates'
+    parent: ThemeNessa
+
+settings:
+  starter.contentElementTemplate.layoutRootPath:
+    label: 'Layout Root Path'
+    category: ThemeNessa.templates.content
+    type: string
+    default: 'EXT:starter_nessa/Resources/Private/Extension/FluidStyledContent/Layouts/'
+
+  starter.contentElementTemplate.partialRootPath:
+    label: 'Partial Root Path'
+    category: ThemeNessa.templates.content
+    type: string
+    default: 'EXT:starter_nessa/Resources/Private/Extension/FluidStyledContent/Partials/'
+
+  starter.contentElementTemplate.templateRootPath:
+    label: 'Template Root Path'
+    category: ThemeNessa.templates.content
+    type: string
+    default: 'EXT:starter_nessa/Resources/Private/Extension/FluidStyledContent/Templates/'
