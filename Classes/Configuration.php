@@ -10,18 +10,19 @@ namespace StarterTeam\StarterNessa;
 class Configuration
 {
     /**
-     * @var string[]
+     * @var array<int, string>
      */
-    public const DEFAULT_BACKEND_LAYOUTS = [
+    public const array DEFAULT_BACKEND_LAYOUTS = [
         'DefaultLayout',
         'HeroLayout',
     ];
 
     /**
      * Array with all content elements and definition of type icons
-     * @var array
+     *
+     * @var array<string, array{typeIconPath: string, allowedFileExtensions?: string}>
      */
-    public const CONTENT_ELEMENTS = [
+    public const array CONTENT_ELEMENTS = [
         'nessa_cta' => [
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-target.svg',
         ],
@@ -52,13 +53,18 @@ class Configuration
         'nessa_teaser_icon' => [
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-card.svg',
         ],
+        'starter_m27_download' => [
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/actions/actions-database-export.svg',
+            'allowedFileExtensions' => 'doc,docx,jpg,jpeg,pdf,potx,ppt,pptx,xls,xlsx,zip,msg,oft,rtf',
+        ],
     ];
 
     /**
      * Array with all content elements and definition of type icons
-     * @var array
+     *
+     * @var array<string, array{'typeIconPath': string}>
      */
-    public const CONTENT_ELEMENT_TABLES = [
+    public const array CONTENT_ELEMENT_TABLES = [
         'tx_starternessa_team_element' => [
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/overlay/overlay-backendusers.svg',
         ],
@@ -75,6 +81,7 @@ class Configuration
 
     /**
      * Return the default defined backend layouts
+     * @return array<int, string>
      */
     public static function getDefaultBackendLayouts(): array
     {
@@ -83,6 +90,7 @@ class Configuration
 
     /**
      * Return all custom content elements
+     * @return array<string, array{'typeIconPath': string, allowedFileExtensions?: string}>
      */
     public static function getContentElements(): array
     {
@@ -91,9 +99,15 @@ class Configuration
 
     /**
      * Return all custom content elements tables
+     * @return array<string, array{'typeIconPath': string}>
      */
     public static function getContentElementTables(): array
     {
         return self::CONTENT_ELEMENT_TABLES;
+    }
+
+    public static function getAllowedFileExtensions(string $CType): string
+    {
+        return self::CONTENT_ELEMENTS[$CType]['allowedFileExtensions'] ?? '';
     }
 }

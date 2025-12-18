@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace StarterTeam\StarterNessa\ViewHelpers\Format;
 
 use InvalidArgumentException;
-use Override;
 use TYPO3\CMS\Core\Utility\StringUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
@@ -35,12 +34,13 @@ class UpperViewHelper extends AbstractViewHelper
 
     protected $escapeChildren = false;
 
-    #[Override]
+    #[\Override]
     public function initializeArguments(): void
     {
         $this->registerArgument('value', 'string', 'String to format');
     }
 
+    #[\Override]
     public function render(): string
     {
         $value = $this->renderChildren();
@@ -62,7 +62,7 @@ class UpperViewHelper extends AbstractViewHelper
     /**
      * Explicitly set argument name to be used as content.
      */
-    #[Override]
+    #[\Override]
     public function getContentArgumentName(): string
     {
         return 'value';

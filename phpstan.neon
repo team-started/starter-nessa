@@ -1,17 +1,25 @@
 includes:
   - phpstan-baseline.neon
 parameters:
-    level: max
-    reportUnmatchedIgnoredErrors: true
-    paths:
-       - ./
-    excludePaths:
-        - .Build
-        - .ddev
-        - .project
-        - config
-        - Resources/Private/frontendSrc
-        - var
-    ignoreErrors:
-        -
-            identifier: missingType.iterableValue
+  level: max
+  reportUnmatchedIgnoredErrors: true
+  paths:
+    - ./
+  excludePaths:
+    - .Build
+    - .ddev
+    - .project
+    - config
+    - Resources/Private/frontendSrc
+    - var
+  ignoreErrors:
+    - identifier: missingType.iterableValue
+    -
+      identifier: 'offsetAccess.nonOffsetAccessible'
+      paths:
+        - "Configuration/TCA/**"
+        - "ext_localconf.php"
+    -
+      identifier: 'argument.type'
+      paths:
+        - "Configuration/TCA/**"

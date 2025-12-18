@@ -4,28 +4,47 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterNessa\DataProcessing;
 
-use Override;
+use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
+use TYPO3\CMS\Core\Utility\StringUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
 final readonly class AssetsOfCategoriesProcessor implements DataProcessorInterface
 {
-    #[Override]
+    private const string DEFAUL_TARGET_VARIABLE_NAME = 'portfolioAssets';
+
+    private const string DEFAULT_SORTBY = 'name';
+
+    public function __construct(
+        private ConnectionPool $connectionPool,
+    ) {
+    }
+
+    #[\Override]
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
     ): array {
-        // The variable to be used within the result
-        $targetVariableName = $cObj->stdWrapValue('as', $processorConfiguration, 'portfolioAssets');
-        $sortBy = (string)$cObj->stdWrapValue('sorting', $processorConfiguration, 'name');
+        $targetVariableName = StringUtility::cast(
+            $cObj->stdWrapValue('as', $processorConfiguration, self::DEFAUL_TARGET_VARIABLE_NAME),
+        );
+        if (!is_string($targetVariableName)) {
+            $targetVariableName = self::DEFAUL_TARGET_VARIABLE_NAME;
+        }
+
+        $sortBy = StringUtility::cast(
+            $cObj->stdWrapValue('sorting', $processorConfiguration, self::DEFAULT_SORTBY)
+        );
+        if (!is_string($sortBy)) {
+            $sortBy = self::DEFAULT_SORTBY;
+        }
 
         $categoriesIdentifiers = $this->getCategoriesIdsFromProcessedData($processedData);
         if ($categoriesIdentifiers === []) {
@@ -57,11 +76,13 @@ final readonly class AssetsOfCategoriesProcessor implements DataProcessorInterfa
         return $processedData;
     }
 
+    /**
+     * @return array<int, array{'uid': int, 'title': string, 'categoryUid': int}>
+     * @throws Exception
+     */
     protected function getRecords(array $category, string $sorting = 'name'): array
     {
-        /**@var $queryBuilder QueryBuilder */
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable('sys_file');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('sys_file');
 
         return $queryBuilder
             ->select('sys_file.uid', 'sys_category.title', 'sys_category.uid as categoryUid')

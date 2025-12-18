@@ -1,5 +1,6 @@
 <?php
 
+use StarterTeam\StarterNessa\Configuration;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -7,7 +8,7 @@ defined('TYPO3') || die();
 (function () {
     $translationFile = 'LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:';
     $cType = 'starter_m27_download';
-    $allowedFileExtensions = 'doc,docx,jpg,jpeg,pdf,potx,ppt,pptx,xls,xlsx,zip,msg,oft,rtf';
+    $allowedFileExtensions = Configuration::getAllowedFileExtensions($cType);
 
     $GLOBALS['TCA']['tt_content']['types'][$cType] = [
         'showitem' => '

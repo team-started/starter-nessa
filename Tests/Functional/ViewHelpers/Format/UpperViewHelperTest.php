@@ -29,6 +29,8 @@ final class UpperViewHelperTest extends FunctionalTestCase
     #[Override]
     public function setUp(): void
     {
+        parent::setUp();
+
         self::$cachePath = sys_get_temp_dir() . '/' . 'starter_nessa-functional-tests-' . hash('xxh3', self::class);
         mkdir(self::$cachePath);
         self::$cache = (new SimpleFileCache(self::$cachePath));
@@ -39,6 +41,8 @@ final class UpperViewHelperTest extends FunctionalTestCase
     {
         self::$cache->flush();
         rmdir(self::$cachePath);
+
+        parent::tearDown();
     }
 
     public static function renderDataProvider(): array
