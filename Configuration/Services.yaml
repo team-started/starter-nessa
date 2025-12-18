@@ -1,9 +1,8 @@
-# Configuration/Services.yaml
 services:
   _defaults:
     autowire: true
     autoconfigure: true
-    public: false
+    public: true
 
   StarterTeam\StarterNessa\:
     resource: '../Classes/*'
